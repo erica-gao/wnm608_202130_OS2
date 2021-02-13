@@ -4,5 +4,5 @@
 
 ### Important Links
 
-- https://erica-gao.com
-- https://erica-gao.com/aau/wnm608/Gao.Erica
+- http://erica-gao.com
+- http://erica-gao.com/aau/wnm608/Gao.Erica

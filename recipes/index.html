@@ -2,9 +2,228 @@
 <html>
 <head>
 	<title>Recipe</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@300;400;500;600&family=Lobster&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<p>This is Recipe.</p>
+	<button onclick="topFunction()" id="myBtn">Top</button>
 
+	<div class="title">
+		<h1>Cravings</h1>
+		<h4><span style="font-size: 13px;">by</span> Erica :)</h4>
+	</div>
+
+
+	<div class="header">
+		<div class="header_part1">
+			<h2>BREAKFAST FOR TWO</h2>
+
+			<a href="#latte">Start Preparing</a>
+		</div>
+
+		<div id="header_part2">
+
+			<div id="main">
+				<div id="slideshow-frame">
+					<div class="slideshow-images">
+						<img src="images/slideshow1.JPG">
+						<img src="images/slideshow2.JPG">
+				
+					</div>
+					<div class="arrow-next"></div>
+					<div class="arrow-prev"></div>
+
+				</div>
+
+			
+			</div>
+		</div>
+	</div>
+
+
+
+	<section id="latte">
+		
+		<div class="latte_Ingredients">
+			<div class="latte_Picture">
+				<img src="images/latte.JPG">
+				<h3>LATTE</h3>
+			</div>
+
+			<div class="latte_Description">
+				<h3>How to make a latte without an espresso machine</h3>
+				<h5>INGREDIENTS</h5>
+				<ul>
+					<li>2 tablespoon espresso powder (or 2 tablespoons instant coffee granules/powder if you don't have a coffee machine)</li>
+					<li>1 cup hot water</li>
+					<li>Any kind of milk you like: whole, 2%, oatmilk, soymilk etc.</li>
+					<li>Ice (Optional)</li>
+					
+				</ul>
+				<button id="change_Display">Show Recipe</button>
+			</div>
+
+		</div>
+
+
+		<div id="show_hide" style="display: none;">
+
+			<div class="pictures">
+				<img src="images/latte1.JPG">
+				<img src="images/latte2.JPG">
+				<img src="images/latte3.JPG">
+				<img src="images/latte4.JPG">
+				<img src="images/latte5.JPG">
+				<img src="images/latte6.JPG">
+
+				
+			</div>
+
+			<div class="latte_Instructions">
+				<ol>
+					<li>Grab a mug of your choice.</li>
+					<li>Pour in a milk of your choice, here I'm using coconut milk :)</li>
+					<li>Prepare your coffee machine for brewing, or boil some water if you are using instant coffee powder.</li>
+					<li>Add 1-2 tablespoons of coffee powder and start the machine! Be aware that since we are using coffee machine to brew espresso, add only 1 cup of water.</li>
+					<li>It's ready!</li>
+					<li>Pour in and serve!</li>
+				</ol>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="frenchtoast">
+		
+		<div class="latte_Ingredients">
+			<div class="frenchtoast_Picture">
+				<img src="images/frenchtoast.JPG">
+				<h3>FRENCH TOAST</h3>
+			</div>
+
+			<div class="latte_Description">
+				<h3>With Pumpkin Toast</h3>
+				<h5>INGREDIENTS</h5>
+				<ul>
+					<li>1-2 egg(s)</li>
+					<li>2/3 cup of milk</li>
+					<li>2 tablespoons of cinnamon (Optional)</li>
+					<li>Butter (or vegetable oil)</li>
+					<li>Bread slices</li>
+					
+				</ul>
+				<button id="frenchtoast_change_Display">Show Recipe</button>
+			</div>
+
+		</div>
+
+
+		<div id="frenchtoast_show_hide" style="display: none;">
+
+			<div class="pictures">
+				<img src="images/frenchtoast1.JPG">
+				<img src="images/frenchtoast2.JPG">
+				<img src="images/frenchtoast3.JPG">
+				<img src="images/frenchtoast4.JPG">
+				<img src="images/frenchtoast5.JPG">
+				<img src="images/frenchtoast6.JPG">
+				<img src="images/frenchtoast7.JPG">
+				<img src="images/frenchtoast8.JPG">
+
+				
+			</div>
+
+			<div class="latte_Instructions">
+				<ol>
+					<li>Prepare some bread slices. I'm using pumpkin toast!</li>
+					<li>Crack 1-2 eggs to a plate. Since I'm only cooking 1 toast, I only used 1 egg.</li>
+					<li>Add 3/4 cup of milk in it and mix it up with the egg.</li>
+					<li>Spread vegetable oil (or butter) on a wok and heat it up with mid-high heat.</li>
+					<li>Dip the toast into egg + milk mix and soak it up on both sides.</li>
+					<li>Toss the toast into the wok and turn the heat down to low-medium.</li>
+					<li>Flip to the other side.</li>
+					<li>Serve by adding a little bit of sugar on the top (Totally optional)</li>
+
+				</ol>
+			</div>
+
+
+
+		</div>
+	</section>
+
+	<section id="egg">
+		
+		<div class="latte_Ingredients">
+			<div class="frenchtoast_Picture">
+				<img src="images/egg.JPG">
+				<h3>EGG</h3>
+			</div>
+
+			<div class="latte_Description">
+				<h3>Sunny-side up</h3>
+				<h5>INGREDIENTS</h5>
+				<ul>
+					<li>1-2 egg(s)</li>
+					<li>Butter (or vegetable oil)</li>
+					<li>Salt</li>
+					<li>Pepper</li>
+					
+				</ul>
+				<button id="egg_change_Display">Show Recipe</button>
+			</div>
+
+		</div>
+
+
+		<div id="egg_show_hide" style="display: none;">
+
+			<div class="pictures">
+				<img src="images/egg1.JPG">
+				<img src="images/egg2.JPG">
+				<img src="images/egg3.JPG">
+				<img src="images/egg4.JPG">
+				<img src="images/egg5.JPG">
+				<img src="images/egg6.JPG">
+				<img src="images/egg.JPG">
+				
+
+				
+			</div>
+
+			<div class="latte_Instructions">
+				<ol>
+					<li>Spread vegetable oil (or butter) on a wok and turn to medium heat.</li>
+					<li>Crack 1 egg to the wok.</li>
+					<li>When it's starting to cook, add a little bit of salt.</li>
+					<li>And pepper.</li>
+					<li>Put on the lid (very important) and turn to low heat.</li>
+					<li>When there's egg white on top of the yolk it's getting ready. You can wait longer if you want.</li>
+					<li>Ready to serve!</li>
+				
+
+				</ol>
+			</div>
+
+
+
+		</div>
+	</section>
+
+	
+
+	<footer>
+	<p class="footer">Copyright &copy; 2021 Erica Gao. All Rights Reserved.</p>
+	</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

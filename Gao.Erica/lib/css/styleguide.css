@@ -83,6 +83,8 @@ a:hover {
 .display-inline-block { display:inline-block; }
 
 .flex-stretch { flex: 1 1 auto; }
+/*default flex: 0 1 auto*/
+/*flex-stretch can be used as a spacer to push 2 items to the side whiile keeping their size*/
 .flex-none { flex: none; }
 
 

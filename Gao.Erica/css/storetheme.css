@@ -1,0 +1,47 @@
+/*COMPARE GALLERY*/
+.product {
+   margin-bottom: 1em;
+   margin-top: 1em; 
+
+   margin-right: 1em;
+
+   position: relative;
+   overflow: hidden;
+
+   background-size: cover;
+   background-position: center;
+   background-attachment: inherit;
+
+   height: 32vh;
+   width: 32vw;
+
+   padding: 16px;
+   
+}
+
+.product_last {
+   margin-bottom: 1em;
+   margin-top: 1em; 
+
+   position: relative;
+   overflow: hidden;
+
+   background-size: cover;
+   background-position: center;
+   background-attachment: inherit;
+
+   height: 32vh;
+   width: 32vw;
+
+   padding: 16px;
+   
+}
+
+.add-cart {
+   width: 2em;
+   height: 2em;
+   border: 2px solid black;
+   background-image: url(../images/plus.png);
+
+
+

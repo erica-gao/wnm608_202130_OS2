@@ -1,0 +1,271 @@
+
+
+/* CSS RESETS */
+
+/*when we set width to be 100px, it includes padding + margin*/
+
+/** is selecting all elements*/
+*, *::before, *::after {
+   box-sizing: border-box;
+}
+
+/*to get the webpage to go all the way to the page end*/
+/*accepting whatever font size users set*/
+/*if Helvetica doesn't show up, show Arial*/
+:root {
+   --color-neutral-light:#e4e2e9;
+   --color-neutral-medium:#8c8894;
+   --color-neutral-dark:#423f4a;
+
+   --color-white:#fff;
+   --color-black:#111;
+
+   --color-button: #727079;
+   --color-button-light: #aca9b5;
+
+
+   --header-height: 3rem;
+   --category-height: 3rem;
+   /*padding, border etc, doesn't change when font-size changes*/
+
+
+   --font-sans: Helvetica, Arial, sans-serif;
+   --font-serif: Cambria, Georgia, "Times New Roman", serif;
+}
+
+body {
+   margin:0;
+   font-size:100%;
+   font-family:var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+   font-family:var(--font-serif);
+}
+
+
+/*inherit whatever the parents has*/
+a {
+   color:inherit;
+   font-weight:bold;
+   text-decoration:none;
+}
+a:hover {
+   text-decoration:underline;
+}
+
+
+
+
+/* LAYOUT CLASSES */
+
+/*a generic class that makes part of your website a container and centers it*/
+.container {
+   max-width:1000px;
+   margin-left:auto;
+   margin-right:auto;
+}
+
+
+.hidden { display:none; }
+
+
+.display-flex { display:flex; }
+.display-flex-space {display: flex; justify-content: space-around;}
+.display-block { display:block; }
+.display-inline-flex { display:inline-flex; }
+.display-inline-block { display:inline-block; }
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex: none; }
+
+
+/*across axis; vertically*/
+.flex-align-center { align-items:center; }
+.flex-justify-center { justify-content:center; }
+/*main axis; horizontally*/
+
+
+
+
+
+/* COMPONENT CLASSES */
+
+.navbar {
+   background-color:var(--color-black);
+   color:var(--color-white);
+   line-height:var(--header-height);
+}
+
+.navbar h1 {
+   font-family:var(--font-sans);
+   font-size:1em;
+   margin:0;
+}
+
+.nav ul,
+.navbar ul {
+   list-style-type:none;
+   margin:0;
+   padding-left:0;
+}
+
+.navbar a {
+   display:block;
+   padding:0 0.5em;
+
+   /*makes the whole block clickable*/
+}
+
+
+.category_Bar {
+   background-color:var(--color-neutral-dark);
+   color:var(--color-white);
+   line-height:var(--category-height);
+
+}
+
+.category_Bar ul {
+   list-style-type:none;
+   margin:0;
+   padding: 14px 7px 7px;
+}
+
+
+
+/*em is a unit relative to the currently chosen font size; relative to the parent and can changeg*/
+/*% is relative to either the height or width of a parent element*/
+/*rem is relative to the body - consistant*/
+
+
+/*VIEW WINDOW*/
+
+.view-window {
+   position: relative;
+   overflow: hidden;
+
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+
+   height: 70vh;
+}
+
+.view-window h2{
+   color: var(--color-white);
+}
+
+
+
+/* CARD */
+.card {
+   background-color: var(--color-white);
+   padding: 1em;
+
+   margin-bottom: 1em;
+   margin-top: 1em;
+
+   position: relative;
+   overflow: hidden;
+}
+
+.card.soft {
+   border-radius: 0.5em;
+   box-shadow: 3px 4px 5px 1px #0000002b;
+}
+
+.card.hard {
+   border-radius: 0.2em;
+   border: 2px solid var(--color-neutral-medium);
+
+}
+
+
+.card.dark {
+   border-radius: 0.5em;
+   background-color: var(--color-neutral-dark);
+   color: var(--color-white);
+}
+
+.card.medium{
+   border-radius: 0.5em;
+   background-color: var(--color-neutral-medium);
+}
+
+.card.flat{
+   padding: 0;
+}
+
+
+/*BUTTON*/
+
+.button.window {  
+   margin-bottom: 1em;
+   margin-top: 1em; 
+
+   position: relative;
+   overflow: hidden;
+
+   background-size: cover;
+   background-position: center;
+   background-attachment: inherit;
+
+   height: 50vh;
+   width: 32vw;
+
+   padding: 16px;
+
+}
+
+.button.big {
+   border-radius: 0.2em;
+   background-color: var(--color-button);
+   color: var(--color-white);
+   width: 8em;
+   height: 2em;
+   display: block;
+   padding:0.5em 0.5em;
+ 
+}
+
+.button.small {
+   border-radius: 0.2em;
+   background-color: var(--color-button);
+   color: var(--color-white);
+   width: 6em;
+   height: 2em;
+   display: block;
+   padding:0.5em 0.5em;
+ 
+}
+
+.button.big:hover {
+   background-color: var(--color-neutral-light);
+   color: var(--color-black);
+}
+
+.button.small:hover {
+   background-color: var(--color-neutral-light);
+   color: var(--color-black);
+}
+
+
+.button.medium {
+
+}
+
+.button.hard {
+
+}
+
+
+
+
+
+

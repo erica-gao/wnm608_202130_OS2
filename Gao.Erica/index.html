@@ -5,9 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Erica's Coffee Company</title>
 
-	<!-- Always write library code css + js before local code -->
+	<base href="/aau/wnm608/Gao.Erica/">
+
+	<!-- relative urls relative to the base -->
+	<!-- source attributes and href attributes and inline style will be affected -->
+	<!-- this is how we can use our styleguide in lib -->
 	<link rel="stylesheet" type="text/css" href="lib/css/styleguide.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/gridsystem.css">
 	<link rel="stylesheet" type="text/css" href="css/storetheme.css">
+
 </head>
 <body>
 
@@ -91,61 +97,47 @@
 	</div>
 
 
-	<div class="container card soft">
 
-
-		<div class="container display-flex flex-justify-center">
-			<h2>Find the right brewer for you</h2>
-		</div>
-
-
-		<div class="container display-flex-space">
-			<div class="product" style="background-image: url(images/product1.jpg);">
+	<div class="container">
+		<div class="card soft">
+			<div class="display-flex flex-justify-center">
+				<h2>Find the right brewer for you</h2>
 			</div>
-
-
-
-			<div class="product" style="background-image: url(images/product2.jpg);">
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-3 col-margin">
+	               <div class="product_image_wrap" style="background-image: url(images/product1.jpg);"></div>
+	               <div class="product_name"><h4>Coffee Machine Name</h4></div>
+	               <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
+	               <p class="button big" style="text-align: center;">Add to Cart</p>
+	            </div>
+	       
+	            <div class="col-xs-12 col-md-3 col-margin">
+	               <div class="product_image_wrap" style="background-image: url(images/product2.jpg);"></div>
+	               <div class="product_name"><h4>Coffee Machine Name</h4></div>
+	               <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
+	               <p class="button big" style="text-align: center;">Add to Cart</p>
+	            </div>
+	       
+	            <div class="col-xs-12 col-md-3 col-margin">
+	               <div class="product_image_wrap" style="background-image: url(images/product3.jpg);"></div>
+	               <div class="product_name"><h4>Coffee Machine Name</h4></div>
+	               <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
+	               <p class="button big" style="text-align: center;">Add to Cart</p>
+	            </div>
+	        
+	            <div class="col-xs-12 col-md-3 col-margin">
+	               <div class="product_image_wrap" style="background-image: url(images/product4.jpg);"></div>
+	               <div class="product_name"><h4>Coffee Machine Name</h4></div>
+	               <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
+	               <p class="button big" style="text-align: center;">Add to Cart</p>
+	            </div>
+	          
+	          
+	         
 			</div>
-			
-
-
-
-			<div class="product" style="background-image: url(images/product3.jpg);">
-			</div>
-
-			
-
-			<div class="product_last" style="background-image: url(images/product4.jpg);">
-			</div>
-			
 		</div>
 
-
-		<div class="container display-flex-space">
-			<h4>Coffee Machine Name</h4>
-			<h4>Coffee Machine Name</h4>
-			<h4>Coffee Machine Name</h4>
-			<h4>Coffee Machine Name</h4>
-		</div>
-
-		<div class="container display-flex-space">
-			<p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p>
-
-			<p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p>
-
-			<p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p>
-
-			<p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p>
-		</div>
-
-		<div class="container display-flex-space">
-			<p class="button big" style="text-align: center;">Add to Cart</p>
-			<p class="button big" style="text-align: center;">Add to Cart</p>
-			<p class="button big" style="text-align: center;">Add to Cart</p>
-			<p class="button big" style="text-align: center;">Add to Cart</p>
-			
-		</div>
+	</div>
 
 
 

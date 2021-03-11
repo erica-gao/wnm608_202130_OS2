@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS Framework Styleguide</title>
+
+   <base href="/aau/wnm608/Gao.Erica/">
+
+   <link rel="stylesheet" href="lib/css/styleguide.css">
+   <link rel="stylesheet" href="lib/css/gridsystem.css">
+   <link rel="stylesheet" href="css/storetheme.css">
+</head>
+<body>
+
+	<header class="navbar">
+      <div class="container display-flex flex-align-center">
+         <div class="flex-none">
+            <h1>Styleguide</h1>
+         </div>
+         <div class="flex-stretch"></div>
+         <nav class="nav flex-none">
+            
+         </nav>
+      </div>
+   </header>
+
+
+   <div class="container">
+      <div class="card soft">
+         <h2>Table of Contents</h2>
+
+         <ul class="nav toc">
+            <li><a href="styleguide/#typography">Typography</a></li>
+            <!-- go to typography section below -->
+            <li><a href="styleguide/#color">Color</a></li>
+            <li><a href="styleguide/#grid">Grid</a></li>
+            <li><a href="styleguide/#card">Card</a></li>
+            <li><a href="styleguide/#navigation">Navigation</a></li>
+            
+         </ul>
+      </div>
+   </div>
+
+   <div class="container" id="typography">
+      <div class="card soft">
+         <h2>Typography</h2>
+
+         <div class="display-flex flex-align-center">
+         	<div class="flex-none">
+
+         		<!-- html entities to put symbols to website
+         		&lt; = less than -->
+         		<code>&lt;h1>&lt;/h1></code>
+         	</div>
+         	<h1>Heading 1</h1>
+         </div>
+
+         <!-- h$*6{Heading $} -->
+
+         <div class="display-flex flex-align-center">
+            <div class="flex-none">
+               <code>&lt;h2>&lt;/h2></code>
+            </div>
+            <div class="flex-stretch"><h2>Heading 2</h2></div>
+         </div>
+         <div class="display-flex flex-align-center">
+            <div class="flex-none">
+               <code>&lt;h3>&lt;/h3></code>
+            </div>
+            <div class="flex-stretch"><h3>Heading 3</h3></div>
+         </div>
+         <div class="display-flex flex-align-center">
+            <div class="flex-none">
+               <code>&lt;h4>&lt;/h4></code>
+            </div>
+            <div class="flex-stretch"><h4>Heading 4</h4></div>
+         </div>
+         <div class="display-flex flex-align-center">
+            <div class="flex-none">
+               <code>&lt;h5>&lt;/h5></code>
+            </div>
+            <div class="flex-stretch"><h5>Heading 5</h5></div>
+         </div>
+         <div class="display-flex flex-align-center">
+            <div class="flex-none">
+               <code>&lt;h6>&lt;/h6></code>
+            </div>
+            <div class="flex-stretch"><h6>Heading 6</h6></div>
+         </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="card">
+      	<div class="card soft">
+      		<h2>Grid</h2>
+      		<h3>Basic Grid Structure</h3>
+      		<h4>Single Column Non Responsive (probably shouldn't have been a grid)</h4>
+
+      		<div class="grid">
+      			<div class="col-xs-12">
+      				<div class="well">Column 12</div>
+      			</div>
+      		</div>
+
+      		<h4>3 Column Responsive</h4>
+      		<div class="grid">
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
+      			</div>
+      		</div>
+
+      		<h4>4 Column Responsive</h4>
+      		<div class="grid">
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+      		</div>
+
+      		<h4>4 Column Responsive with Gap</h4>
+      		<div class="grid gap">
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-4">
+      				<div class="well">col-xs-12 col-md-4</div>
+      			</div>
+      		</div>
+
+      		<h3>Other Examples</h3>
+
+      		<div class="grid gap">
+	            <div class="col-xs-12 col-md-6">
+	               <img src="https://via.placeholder.com/600" class="media-image" alt="">
+	            </div>
+	            <div class="col-xs-12 col-md-6">
+	                <div class="grid gap">
+	                  
+	                    <div class="col-xs-12 col-sm-6">
+	                       <img src="https://via.placeholder.com/600" class="media-image" alt="">
+	                    </div>
+	                    <div class="col-xs-12 col-sm-6">
+	                       <img src="https://via.placeholder.com/600" class="media-image" alt="">
+	                    </div>
+	                    <div class="col-xs-12 col-sm-6">
+	                       <img src="https://via.placeholder.com/600" class="media-image" alt="">
+	                    </div>
+	                    <div class="col-xs-12 col-sm-6">
+	                       <img src="https://via.placeholder.com/600" class="media-image" alt="">
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+
+
+      	</div>
+    </div>
+
+    <div class="container" id="card">
+      	<div class="card soft">
+      		<h2>Card</h2>
+
+      		<h3>Standard Card</h3>
+         	<div class="card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         	<h3>Medium Card</h3>
+         	<div class="card medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+        	 <h3>Dark Card</h3>
+         	<div class="card dark">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         	<h3>Soft Standard Card</h3>
+         	<div class="card soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         	<h3>Soft Medium Card</h3>
+         	<div class="card medium soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         	<h3>Soft Dark Card</h3>
+         	<div class="card dark soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+         	<h3>Soft flat Card</h3>
+         	<div class="card soft flat">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+
+      	</div>
+    </div>
+
+
+ <div class="container" id="navigations">
+      <div class="card soft">
+         <h2>Navigations</h2>
+
+         <nav class="nav">
+            <!-- ul>li*4>a[href=#]>{Link $} -->
+            <ul>
+               <li><a href="#">Link 1</a></li>
+               <li><a href="#">Link 2</a></li>
+               <li><a href="#">Link 3</a></li>
+               <li><a href="#">Link 4</a></li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+   
+</body>
+</html>

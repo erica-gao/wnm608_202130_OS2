@@ -13,12 +13,26 @@
 /*accepting whatever font size users set*/
 /*if Helvetica doesn't show up, show Arial*/
 :root {
+
+  /* use names that mean use not visuals*/
    --color-neutral-light:#e4e2e9;
    --color-neutral-medium:#8c8894;
    --color-neutral-dark:#423f4a;
 
    --color-white:#fff;
    --color-black:#111;
+
+/*   --color-main-light
+   --color-main-medium
+   --color-main-dark
+
+   --color-sub-light
+   --color-sub-medium
+   --color-sub-dard
+
+   --color-confirm
+   --color-cancel
+   --color-warning*/
 
    --color-button: #727079;
    --color-button-light: #aca9b5;
@@ -49,6 +63,22 @@ p {
    font-family:var(--font-serif);
 }
 
+h1 {
+   font-size:1.5em;
+}
+h2 {
+   font-size:1.25em;
+}
+h3,
+h4 {
+   font-size:1em;
+   margin:1em 0;
+}
+h5,
+h6 {
+   font-size:0.8em;
+   margin:1em 0;
+}
 
 /*inherit whatever the parents has*/
 a {
@@ -59,8 +89,6 @@ a {
 a:hover {
    text-decoration:underline;
 }
-
-
 
 
 /* LAYOUT CLASSES */
@@ -94,23 +122,17 @@ a:hover {
 /*main axis; horizontally*/
 
 
-
+/*Media Image*/
+.media-image {
+   max-width: 100%;
+   vertical-align: middle;
+}
 
 
 /* COMPONENT CLASSES */
 
-.navbar {
-   background-color:var(--color-black);
-   color:var(--color-white);
-   line-height:var(--header-height);
-}
 
-.navbar h1 {
-   font-family:var(--font-sans);
-   font-size:1em;
-   margin:0;
-}
-
+/* NAV */
 .nav ul,
 .navbar ul {
    list-style-type:none;
@@ -118,12 +140,47 @@ a:hover {
    padding-left:0;
 }
 
+.nav a {
+   display:block;
+   padding:0.2em 0.5em;
+}
+.nav a:hover {
+   background-color:var(--color-main-medium);
+   color:var(--color-white);
+   text-decoration:none;
+}
+
+   .nav.flex ul,
+   .nav.stretch ul {
+      display:flex;
+   }
+
+   .nav.stretch li {
+      flex:1 1 auto;
+      text-align:center;
+   }
+
+
+
+
+
+/* Navbar */
+.navbar {
+   background-color:var(--color-neutral-dark);
+   color:var(--color-white);
+   line-height:var(--header-height);
+}
+.navbar h1 {
+   font-family:var(--font-sans);
+   font-size:1em;
+   margin:0;
+}
+
 .navbar a {
    display:block;
    padding:0 0.5em;
-
-   /*makes the whole block clickable*/
 }
+
 
 
 .category_Bar {
@@ -190,13 +247,11 @@ a:hover {
 
 
 .card.dark {
-   border-radius: 0.5em;
    background-color: var(--color-neutral-dark);
    color: var(--color-white);
 }
 
 .card.medium{
-   border-radius: 0.5em;
    background-color: var(--color-neutral-medium);
 }
 

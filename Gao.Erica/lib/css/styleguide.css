@@ -15,26 +15,51 @@
 :root {
 
   /* use names that mean use not visuals*/
-   --color-neutral-light:#e4e2e9;
+  /* neutral should be grey */ 
+  /* avoid having color in the naming */
+
+   /*--color-neutral-light:#e4e2e9;
    --color-neutral-medium:#8c8894;
    --color-neutral-dark:#423f4a;
+   --color-neutral-extra-dark: #332f30;
 
    --color-white:#fff;
    --color-black:#111;
 
-/*   --color-main-light
-   --color-main-medium
-   --color-main-dark
+   --color-main-light: #b19082;
+   --color-main-medium: #846658;
+   --color-main-dark: #53382c;
 
-   --color-sub-light
-   --color-sub-medium
-   --color-sub-dard
+   --color-sub-light: #f3d2bd;
+   --color-sub-medium: #c7916d;
+   --color-sub-dark:#a05c30;*/
 
-   --color-confirm
-   --color-cancel
-   --color-warning*/
+   --color-neutral-lighter:#f0f0f2;
+   --color-neutral-light:#e4e2e9;
+   --color-neutral-medium:#8c8894;
+   --color-neutral-dark:#423f4a;
 
-   --color-button: #727079;
+   --color-main-light: #c8b6f3;
+   --color-main-medium: #743ee0;
+   --color-main-dark: #26125b;
+
+   --color-sub-light: #efca99;
+   --color-sub-medium: #de781e;
+   --color-sub-dark: #79290b;
+
+   --color-sell-medium: #5ecd61;
+   --color-sell-dark: #1e7820;
+
+
+   --color-white:#fff;
+   --color-black:#111;
+
+
+   --color-confirm: #198753;
+   --color-cancel: #f5f5f5;
+   --color-warning: #dd3444;
+
+   --color-button: #544949;
    --color-button-light: #aca9b5;
 
 
@@ -44,7 +69,7 @@
 
 
    --font-sans: Helvetica, Arial, sans-serif;
-   --font-serif: Roboto, Lato, "Times New Roman", serif;
+   --font-serif: Roboto, Georgia, "Times New Roman", serif;
 }
 
 body {
@@ -184,7 +209,7 @@ a:hover {
 
 
 .category_Bar {
-   background-color:var(--color-neutral-dark);
+   background-color:var(--color-neutral-extra-dark);
    color:var(--color-white);
    line-height:var(--category-height);
 
@@ -255,6 +280,10 @@ a:hover {
    background-color: var(--color-neutral-medium);
 }
 
+.card.rainbow {
+      background-image: linear-gradient(130deg, #ff00a2, blue, #00ff99, #ebff00);
+   }
+
 .card.flat{
    padding: 0;
 }
@@ -275,6 +304,18 @@ a:hover {
 
 
 /*BUTTON*/
+
+.btn {
+   width: 7em;
+   height: 3em;
+   text-align: center;
+   border-radius: 0.5em;
+   color: var(--color-white);
+}
+
+.btn-primary {
+   background-color: var(--color-button);
+}
 
 .button.window {  
    margin-bottom: 1em;
@@ -319,14 +360,16 @@ a:hover {
 }
 
 .button.big:hover {
-   background-color: var(--color-neutral-light);
+   background-color: var(--color-button-light);
    color: var(--color-black);
 }
 
 .button.small:hover {
-   background-color: var(--color-neutral-light);
+   background-color: var(--color-button-light);
    color: var(--color-black);
 }
+
+
 
 
 

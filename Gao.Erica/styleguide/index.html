@@ -37,6 +37,8 @@
             <li><a href="styleguide/#grid">Grid</a></li>
             <li><a href="styleguide/#card">Card</a></li>
             <li><a href="styleguide/#navigation">Navigation</a></li>
+            <li><a href="styleguide/#tables">Tables</a></li>
+            <li><a href="styleguide/#forms">Forms</a></li>
             
          </ul>
       </div>
@@ -92,6 +94,17 @@
     </div>
 
 
+     <div class="container" id="card">
+      <div class="card soft">
+         <h2>Color</h2>
+
+         <div style="background-color:var(--color-neutral-light)">Color Neutral Light</div>
+         <div style="background-color:var(--color-neutral-medium)">Color Neutral Medium</div>
+         <div style="background-color:var(--color-neutral-dark)">Color Neutral Dark</div>
+      </div>
+   </div>
+
+
     <div class="container" id="card">
       	<div class="card soft">
       		<h2>Grid</h2>
@@ -104,41 +117,45 @@
       			</div>
       		</div>
 
-      		<h4>3 Column Responsive</h4>
-      		<div class="grid">
-      			<div class="col-xs-12 col-md-3">
-      				<div class="well">col-xs-12 col-md-3</div>
-      			</div>
+            <h4>3 Column Responsive</h4>
+            <div class="grid">
+               <div class="col-xs-12 col-md-4">
+                  <div class="well">col-xs-12 col-md-4</div>
+               </div>
 
-      			<div class="col-xs-12 col-md-3">
-      				<div class="well">col-xs-12 col-md-3</div>
-      			</div>
+               <div class="col-xs-12 col-md-4">
+                  <div class="well">col-xs-12 col-md-4</div>
+               </div>
 
-      			<div class="col-xs-12 col-md-3">
-      				<div class="well">col-xs-12 col-md-3</div>
-      			</div>
+               <div class="col-xs-12 col-md-4">
+                  <div class="well">col-xs-12 col-md-4</div>
+               </div>
+            </div>
 
-      			<div class="col-xs-12 col-md-3">
-      				<div class="well">col-xs-12 col-md-3</div>
-      			</div>
-      		</div>
+
 
       		<h4>4 Column Responsive</h4>
       		<div class="grid">
-      			<div class="col-xs-12 col-md-4">
-      				<div class="well">col-xs-12 col-md-4</div>
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
       			</div>
 
-      			<div class="col-xs-12 col-md-4">
-      				<div class="well">col-xs-12 col-md-4</div>
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
       			</div>
 
-      			<div class="col-xs-12 col-md-4">
-      				<div class="well">col-xs-12 col-md-4</div>
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
+      			</div>
+
+      			<div class="col-xs-12 col-md-3">
+      				<div class="well">col-xs-12 col-md-3</div>
       			</div>
       		</div>
 
-      		<h4>4 Column Responsive with Gap</h4>
+      		
+
+      		<h4>3 Column Responsive with Gap</h4>
       		<div class="grid gap">
       			<div class="col-xs-12 col-md-4">
       				<div class="well">col-xs-12 col-md-4</div>
@@ -204,6 +221,9 @@
          	<h3>Soft Dark Card</h3>
          	<div class="card dark soft">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
 
+            <h3>Soft Rainbow Card</h3>
+            <div class="card rainbow soft">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Aliquam provident, neque! Esse dignissimos ducimus, tenetur necessitatibus reiciendis corrupti fugit. Nihil est corporis aliquam deserunt expedita voluptates error tempore vitae assumenda!</div>
+
          	<h3>Soft flat Card</h3>
          	<div class="card soft flat">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
 
@@ -212,21 +232,121 @@
     </div>
 
 
+    <div class="container card">
+      <h2>Buttons</h2>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+
+      <button type="button" class="btn btn-link">Link</button>
+    </div>
+
+
+    <!-- people can pass in a value for classes or keep it empty
+    constant function called makeNav, which accepts a classes with a default value of empty string -->
+    <script>
+       const makeNav = (classes='') => {
+         const links = ['home','store','about','cart'];
+
+         // `` is a backtick quote next to 1
+         // ${classes} refers to the input classes
+         // reduce --> Javascript array methods on MDN: The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value / string.
+         // r: currently reducing value
+         // o: current object in the loop
+         // i: current index in the loop
+         // a: array being looped
+         // adding to r a string value and return it
+         // the second '' is what it defaults to when the reducer starts
+         document.write(`
+         <div>
+         <nav class="${classes}">
+            <ul>
+
+               ${links.reduce((r,o,i,a)=>r+`<li><a href="#">${o}</a></li>`,'')}
+            </ul>
+         </nav>
+         </div>
+   `     );
+      }
+    </script>
+
+
  <div class="container" id="navigations">
       <div class="card soft">
          <h2>Navigations</h2>
+         <h3>Basic Nav</h3>
+         <div class="grid">
+            <div class="col-4">
+               <script>makeNav("nav")</script>
+            </div>
+            <div class="col-8">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptas, saepe accusamus beatae fugiat assumenda excepturi adipisci, nemo odio doloribus nobis iure architecto earum non aspernatur possimus dolores reprehenderit rerum perspiciatis animi eveniet ea eius omnis. Ratione, omnis, nihil corporis deserunt, deleniti laborum ad vel totam, quisquam quod esse animi.</p>
+               <p>Eos nemo, reprehenderit reiciendis totam itaque ut officia saepe necessitatibus tempora doloribus nesciunt sequi quos a. Laborum voluptate ducimus labore, unde perspiciatis enim quia animi commodi veritatis praesentium illum, corporis. Id, soluta. Repellendus tenetur, ipsam impedit nihil, quod accusantium. Repellat accusantium dolorum amet itaque quis aut voluptas delectus doloremque pariatur.</p>
+            </div>
+         </div>
 
-         <nav class="nav">
-            <!-- ul>li*4>a[href=#]>{Link $} -->
-            <ul>
-               <li><a href="#">Link 1</a></li>
-               <li><a href="#">Link 2</a></li>
-               <li><a href="#">Link 3</a></li>
-               <li><a href="#">Link 4</a></li>
-            </ul>
-         </nav>
+         <h3>Flex Nav</h3>
+         <script>makeNav("nav")</script>
+         <div>
+            <nav class="nav flex">
+               <ul>
+                  <li><a href="#">home</a></li>
+                  <li><a href="#">store</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">cart</a></li>
+               </ul>
+               
+            </nav>
+         </div>
+
+         <h3>Stretch Nav</h3>
+         <script>makeNav("nav stretch")</script>
+         <div>
+            <nav class="nav stretch">
+
+               <ul>
+                  <li><a href="#">home</a></li>
+                  <li><a href="#">store</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">cart</a></li>
+               </ul>
+               
+            </nav>
+         </div>
+
+         <h3>Navbar</h3>
       </div>
    </div>
+
+   <header class="navbar">
+      <div class="container display-flex flex-align-center">
+         <div class="flex-none">
+            <h1>Title</h1>
+         </div>
+
+         <div class="flex-stretch"></div>
+
+         <div class="flex-none">
+
+            <script>makeNav("nav flex")</script>
+            <div>
+               <nav class="nav flex">
+                  <ul>
+                  <li><a href="#">home</a></li>
+                  <li><a href="#">store</a></li>
+                  <li><a href="#">about</a></li>
+                  <li><a href="#">cart</a></li>
+               </ul>
+               </nav>
+            </div>
+            
+         </div>
+      </div>
+   </header>
    
 </body>
 </html>

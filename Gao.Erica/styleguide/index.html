@@ -16,7 +16,7 @@
 	<header class="navbar">
       <div class="container display-flex flex-align-center">
          <div class="flex-none">
-            <h1>Styleguide</h1>
+            <h1 style="color: var(--color-white);">Styleguide</h1>
          </div>
          <div class="flex-stretch"></div>
          <nav class="nav flex-none">
@@ -98,6 +98,21 @@
       <div class="card soft">
          <h2>Color</h2>
 
+         <div style="background-color:var(--color-main-lighter)">Color Main Lighter</div>
+         <div style="background-color:var(--color-main-light)">Color Main Light</div>
+         <div style="background-color:var(--color-main-medium)">Color Main Medium</div>
+         <div style="background-color:var(--color-main-dark)">Color Main Dark</div>
+
+         <hr>
+
+         <div style="background-color:var(--color-sub-light)">Color Sub Light</div>
+         <div style="background-color:var(--color-sub-medium)">Color Sub Medium</div>
+         <div style="background-color:var(--color-sub-dark)">Color Sub Dark</div>
+
+         <hr>
+
+
+
          <div style="background-color:var(--color-neutral-light)">Color Neutral Light</div>
          <div style="background-color:var(--color-neutral-medium)">Color Neutral Medium</div>
          <div style="background-color:var(--color-neutral-dark)">Color Neutral Dark</div>
@@ -116,6 +131,19 @@
       				<div class="well">Column 12</div>
       			</div>
       		</div>
+
+            <h4>6 Column Responsive with Gap</h4>
+            <div class="grid gap">
+               <div class="col-xs-12 col-md-6">
+                  <div class="well">col-xs-12 col-md-6</div>
+                  
+               </div>
+
+               <div class="col-xs-12 col-md-6">
+                  <div class="well">col-xs-12 col-md-6</div>
+                  
+               </div>
+            </div>
 
             <h4>3 Column Responsive</h4>
             <div class="grid">
@@ -170,6 +198,27 @@
       			</div>
       		</div>
 
+
+
+            <h4>4 Column Responsive with Gap</h4>
+            <div class="grid gap">
+               <div class="col-xs-12 col-md-3">
+                  <div class="well">col-xs-12 col-md-3</div>
+               </div>
+
+               <div class="col-xs-12 col-md-3">
+                  <div class="well">col-xs-12 col-md-3</div>
+               </div>
+
+               <div class="col-xs-12 col-md-3">
+                  <div class="well">col-xs-12 col-md-3</div>
+               </div>
+
+               <div class="col-xs-12 col-md-3">
+                  <div class="well">col-xs-12 col-md-3</div>
+               </div>
+            </div>
+
       		<h3>Other Examples</h3>
 
       		<div class="grid gap">
@@ -194,6 +243,60 @@
 	                </div>
 	            </div>
 	        </div>
+
+           
+
+           <hr>
+
+           <div class="grid gap">
+            <div class="col-xs-12 col-md-3">
+               <img src="https://via.placeholder.com/300" class="media-image" alt="">
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+               <img src="https://via.placeholder.com/300" class="media-image" alt="">
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+               <img src="https://via.placeholder.com/300" class="media-image" alt="">
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+               <img src="https://via.placeholder.com/300" class="media-image" alt="">
+            </div>
+              
+           </div>
+
+           <hr>
+
+           <h3>Grid Span</h3>
+           <div class="grid-parent grid-gap-small grid-wrap-5">
+                <div class="well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="row-2 well">Item<br>Item</div>
+                <div class="row-2 well">Item</div>
+                <div class="row-3 col-3 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-3 well">Item</div>
+                <div class="col-5 well">Item</div>
+            </div>
+
+
+           <h3>Grid Span with Gap</h3>
+           <div class="grid-parent grid-gap-large grid-wrap-5">
+                <div class="well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="row-2 well">Item<br>Item</div>
+                <div class="row-2 well">Item</div>
+                <div class="row-3 col-3 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-2 well">Item</div>
+                <div class="col-3 well">Item</div>
+                <div class="col-5 well">Item</div>
+            </div>
 
 
       	</div>
@@ -232,17 +335,40 @@
     </div>
 
 
-    <div class="container card">
-      <h2>Buttons</h2>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-secondary">Secondary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-warning">Warning</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-light">Light</button>
-      <button type="button" class="btn btn-dark">Dark</button>
+    <div class="container card soft">
+      <h2>Buttons Large</h2>
+      <button type="button" class="btn btn-primary btn-lg">Primary</button>
+      <button type="button" class="btn btn-secondary btn-lg">Secondary</button>
+      <input type="button" class="btn btn-success btn-lg" value="Success">
+      <a href="#" class="btn btn-cancel btn-lg">Cancel</a>
+      <button type="button" class="btn btn-warning btn-lg">Warning</button>
+      <button type="button" class="btn btn-info btn-lg">Info</button>
+      <button type="button" class="btn btn-light btn-lg">Light</button>
+      <button type="button" class="btn btn-dark btn-lg">Dark</button>
 
-      <button type="button" class="btn btn-link">Link</button>
+      <h2>Buttons Small</h2>
+      <button type="button" class="btn btn-primary btn-sm">Primary</button>
+      <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
+      <input type="button" class="btn btn-success btn-sm" value="Success">
+      <a href="#" class="btn btn-cancel btn-sm">Cancel</a>
+      <button type="button" class="btn btn-warning btn-sm">Warning</button>
+      <button type="button" class="btn btn-info btn-sm">Info</button>
+      <button type="button" class="btn btn-light btn-sm">Light</button>
+      <button type="button" class="btn btn-dark btn-sm">Dark</button>
+
+      <h2>Other Examples</h2>
+   
+      <a href="#" class="btn btn-cart btn-lg">Add to Cart</a>
+      <a href="#" class="btn btn-checkout btn-lg">Checkout</a>
+
+      <h2>Color Contrast</h2>
+      <div class="display-grid">
+         <a href="#" class="btn btn-confirm btn-lg">Confirm</a>
+         <a href="#" class="btn btn-cancel btn-lg">Cancel</a>
+
+      </div>
+      
+
     </div>
 
 
@@ -290,63 +416,439 @@
          </div>
 
          <h3>Flex Nav</h3>
-         <script>makeNav("nav")</script>
-         <div>
-            <nav class="nav flex">
-               <ul>
-                  <li><a href="#">home</a></li>
-                  <li><a href="#">store</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">cart</a></li>
-               </ul>
-               
-            </nav>
-         </div>
+         <script>makeNav("nav flex")</script>
+         <!-- incorporating both nav and flex in the nav classes -->
+      
 
          <h3>Stretch Nav</h3>
          <script>makeNav("nav stretch")</script>
-         <div>
-            <nav class="nav stretch">
 
-               <ul>
-                  <li><a href="#">home</a></li>
-                  <li><a href="#">store</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">cart</a></li>
-               </ul>
-               
-            </nav>
-         </div>
 
-         <h3>Navbar</h3>
+       
+
+         
+         <h3>Navbar and Different Header Arrangements</h3>
       </div>
    </div>
 
    <header class="navbar">
-      <div class="container display-flex flex-align-center">
+      <div class="flex-parent responsive container display-flex flex-align-center">
          <div class="flex-none">
-            <h1>Title</h1>
+            <h1 style="color: var(--color-white);">Title</h1>
          </div>
 
          <div class="flex-stretch"></div>
 
          <div class="flex-none">
-
-            <script>makeNav("nav flex")</script>
-            <div>
-               <nav class="nav flex">
-                  <ul>
-                  <li><a href="#">home</a></li>
-                  <li><a href="#">store</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">cart</a></li>
-               </ul>
-               </nav>
-            </div>
-            
-         </div>
+           <script>makeNav("nav flex")</script>
+        </div>
       </div>
    </header>
+
+   <hr>
+
+   <header class="navbar">
+      <div class="flex-parent responsive container display-flex flex-align-center">
+
+         <div class="flex-none">
+           <div>
+               <nav class="nav">
+                  <ul class="display-flex">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Store</a></li>
+                  </ul>
+               </nav>
+            </div>
+        </div>
+
+        <div class="flex-stretch"></div>
+
+         <div class="flex-none">
+            <h1 style="color: var(--color-white);">Title</h1>
+         </div>
+
+         <div class="flex-stretch"></div>
+
+         <div class="flex-none">
+           <div>
+               <nav class="nav">
+                  <ul class="display-flex">
+                     <li><a href="#">About</a></li>
+                     <li><a href="#">Cart</a></li>
+                  </ul>
+               </nav>
+            </div>
+        </div>
+      </div>
+   </header>
+
+  <!--  breadcrumb navigation: you want something that leads your way back -->
+
+  <div class="container">
+     <div class="card soft">
+        <h3>Breadcrumb Nav</h3>
+        <script>makeNav("crumbs")</script>
+
+        <h3>Nav-Tabs</h3>
+
+        <div class="nav flex nav-tabs">
+         <ul>
+            <li class="nav-item active">
+               <a class="nav-link" href="#">Details</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Summary</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Purchase History</a>
+            </li>
+         </ul>
+
+      </div>
+
+      <h3>Nav with Fill</h3>
+
+        <div class="nav flex nav-fill">
+         <ul>
+            <li class="nav-item active">
+               <a class="nav-link" href="#">Details</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Summary</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Purchase History</a>
+            </li>
+         </ul>
+
+      </div>
+
+
+
+     </div>
+  </div>
+
+  <!-- [i+1,...o] is a spread operator
+  with array literal in it  -->
+
+  <script>
+      const makeTable = (classes='') => {
+         const head = ['ID','Office','Name','Email','Phone'];
+         const body = [
+            ['522',"Hamilton Cline",'hcline@academyart.edu','555-2424'],
+            ['512',"Fred McHale",'fmchale@academyart.edu','555-2424'],
+            ['522',"Michael Catanzaro",'mcatanzaro@academyart.edu','555-2424'],
+            ['514',"Andrea Pimentel",'apimentel@academyart.edu','555-2424'],
+            ['516',"DC Scarpelli",'dscarpelli@academyart.edu','555-2424'],
+         ];
+         document.write(`
+         <table class="${classes}">
+            <thead><tr>${head.reduce((r,o,i,a)=>r+`<th>${o}</th>`,'')}</tr></thead>
+            <tbody>
+               ${body.reduce((r,o,i,a)=>r+
+                  `<tr>${[i+1,...o].reduce((r,o,i,a)=>r+`<td>${o}</td>`,'')}</tr>`
+               ,'')}
+            </tbody>
+         </table>
+         `)
+      }
+</script>
+
+   <div class="container" id="tables">
+      <div class="card soft">
+         <h2>Tables</h2>
+
+         <h3>Standard Table</h3>
+         <script>makeTable("table")</script>
+
+         <h3>Striped Table</h3>
+         <script>makeTable("table striped")</script>
+
+         <h3>Lined Hoizontal Table</h3>
+         <script>makeTable("table lined horizontal")</script>
+
+         <h3>Lined Vertical Table</h3>
+         <script>makeTable("table lined vertical")</script>
+
+         <h3>Lined both Table</h3>
+         <script>makeTable("table lined horizontal vertical")</script>
+
+         <h3>Lined outline Table</h3>
+         <script>makeTable("table lined outline")</script>
+
+         <h3>Lined outline striped Table</h3>
+         <script>makeTable("table lined outline striped")</script>
+
+         <h3>Lined all Table</h3>
+         <div class="overscroll-x">
+            <script>makeTable("table lined all")</script>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- form is a layout element, its a data control structure -->
+   <div class="container" id="forms">
+      <div class="card soft">
+         <h2>Forms</h2>
+
+         <form action="" method=""></form>
+
+         <h3>Basic Input</h3>
+         <form>
+            <!-- only input allowed is the type input -->
+            <input type="text" placeholder="Text" class="form-input">
+            <input type="number" placeholder="Number" class="form-input">
+            <input type="search" placeholder="Search" class="form-input">
+            <input type="password" placeholder="Password" class="form-input">
+         </form>
+
+         <hr>
+
+         <!-- Code inspired by bootstrap -->
+         <h3>Customized Form</h3>
+
+         <form>
+           <div class="grid-parent form-control">
+             <label for="exampleInputEmail1" class="form-label">Email address</label>
+             <input type="email" class="form-input" placeholder="Email Address">
+             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+           </div>
+           <div class="grid-parent form-control">
+             <label for="exampleInputPassword1" class="form-label">Password</label>
+             <input type="password" class="form-input" id="exampleInputPassword1" placeholder="Password">
+           </div>
+           <div class="form-check">
+             <input type="checkbox" class="form-check-input" id="exampleCheck1">
+             <label class="form-text" for="exampleCheck1">Check me out</label>
+           </div>
+           <button type="submit" class="btn btn-sm btn-dark form-control">Submit</button>
+         </form>
+
+         <h3>Name</h3>
+         <div class="grid gap">
+           <div class="col-xs-12 col-md-6">
+             <input type="text" class="form-input" placeholder="First name">
+           </div>
+           <div class="col-xs-12 col-md-6">
+             <input type="text" class="form-input" placeholder="Last name">
+           </div>
+         </div>
+
+         <h3>Address</h3>
+
+         <div class="grid gap">
+           <div class="col-xs-12 col-md-12">
+             <label for="inputAddress" class="form-label">Address</label>
+             <input type="text" class="form-input" id="inputAddress" placeholder="1234 Main St">
+           </div>
+           <div class="col-xs-12 col-md-12">
+             <label for="inputAddress" class="form-label">Apartment/Suite</label>
+             <input type="text" class="form-input" id="inputAddress" placeholder="Apt 123">
+           </div>
+
+           <div class="col-xs-12 col-md-6">
+               <label for="zipCode" class="form-label">Zip Code</label>
+               <input type="text" class="form-input" placeholder="Zip Code">
+           </div>
+           <div class="col-xs-12 col-md-6">
+               <label for="city" class="form-label">City</label>
+               <input type="text" class="form-input" placeholder="City">
+           </div>
+           <div class="col-xs-12 col-md-6">
+               <label for="state" class="form-label">State/Province</label>
+               <input type="text" class="form-input" placeholder="State/Province">
+           </div>
+           <div class="col-xs-12 col-md-6">
+               <label for="country" class="form-label">Country</label>
+               <input type="text" class="form-input" placeholder="Country">
+           </div>
+
+           <div class="col-xs-12 col-md-12">
+             <label for="phoneNumber" class="form-label">Phone Number</label>
+             <input type="text" class="form-input" id="phoneNumber" placeholder="12345678">
+           </div>
+         </div>
+
+
+
+
+         <h3>Password</h3>
+         <form>
+            <div class="grid-parent form-control">
+               <label for="inputPassword5" class="form-label">Password</label>
+               <input type="password" id="inputPassword5" class="form-input" placeholder="Password">
+               <div id="passwordHelpBlock" class="form-text">
+                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+               </div>
+            </div>
+         </form>
+
+
+
+         <h3>Form Label &amp; Control</h3>
+         <div class="form-control">
+            <label for="example1" class="form-label">Name</label>
+            <input id="example1" type="text" placeholder="Name" class="form-input">
+         </div>
+         <div class="form-control">
+            <label for="example2" class="form-label">Name</label>
+            <input id="example2" type="text" placeholder="Name" class="form-input">
+         </div>
+         <div class="form-control">
+            <label for="example3" class="form-label">Name</label>
+            <input id="example3" type="text" placeholder="Name" class="form-input">
+         </div>
+
+         <div class="form-control display-flex flex-align-center">
+            <div class="flex-none"><label for="example4" class="form-label">Name</label></div>
+            <div class="flex-stretch"></div>
+            <div class="flex-none"><input id="example4" type="text" placeholder="Name" class="form-input"></div>
+         </div>
+
+         <h3>Lined Input</h3>
+         <div class="form-control">
+            <label for="example5" class="form-label">Name</label>
+            <input id="example5" type="text" placeholder="Name" class="form-input-lined">
+         </div>
+         <div class="form-control">
+            <label for="example6" class="form-label">Name</label>
+            <input id="example6" type="text" placeholder="Name" class="form-input-lined">
+         </div>
+
+         <hr>
+
+         <h3>Buttons</h3>
+         <input type="button" class="form-button" value="Input Button">
+         <input type="submit" class="form-button" value="Input Submit">
+         <button type="button" class="form-button">Button</button>
+         <a href="#" class="form-button">Anchor</a>
+
+         <h3>Other Buttons</h3>
+         <button type="button" class="form-button sell">Button</button>
+
+         <h3>Other Layouts</h3>
+
+         <div class="display-flex">
+            <div class="flex-stretch"></div>
+            <div class="flex-none">
+               <button type="button" class="form-button sell">Button</button>
+            </div>
+            <div class="flex-none" style="margin-left:0.2em">
+               <button type="button" class="form-button sell">Button</button>
+            </div>
+         </div>
+
+         <hr>
+
+         <!-- use hotdog for search - browser's address bar -->
+
+
+         <h3>Hotdog Input</h3>
+
+         <form>
+            <input type="search" class="hotdog" placeholder="Search">
+         </form>
+
+         <h3>Hotdog Form</h3>
+
+         <form class="hotdog">
+            <div class="flex-stretch">
+               <input type="search" placeholder="Search">
+            </div>
+            <div class="flex-none">
+               <img src="images/icon/search.svg" alt="" class="icon">
+            </div>
+         </form>
+
+         <hr>
+
+         <h3>Form Select</h3>
+
+         <!-- numbers' dropdown - not good for redesign, but you can redesign the button -->
+
+         <select name="" id="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            
+         </select>
+
+         <div class="form-select">
+            <select>
+               <option value="bird">bird</option>
+               <option value="dog">dog</option>
+               <option value="cat">cat</option>
+               <option value="horse">horse</option>
+            </select>
+         </div>
+
+      </div>
+   </div>
+
+
+   <div class="container">
+      <div class="card soft">
+         <h2>Product Figure</h2>
+
+         <figure class="product">
+            <div class="product-image">
+               <img src="https://via.placeholder.com/600?text=Banana" alt="">
+            </div>
+            <figcaption class="product-caption">
+               <div class="product-price">&dollar;15</div>
+               <div class="product-title">Banana</div>
+            </figcaption>
+         </figure>
+
+         <hr>
+
+         <!-- the first product is clickable with an anchor -->
+
+         <div class="grid gap product-list">
+            <div class="col-xs-12 col-md-4">
+               <a href="#" class="product">
+                  <div class="product-image">
+                     <img src="https://via.placeholder.com/600?text=Banana" alt="">
+                  </div>
+                  <figcaption class="product-caption">
+                     <div class="product-price">&dollar;15</div>
+                     <div class="product-title">Banana</div>
+                  </figcaption>
+               </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+               <figure class="product">
+                  <div class="product-image">
+                     <img src="https://via.placeholder.com/600?text=Banana" alt="">
+                  </div>
+                  <figcaption class="product-caption">
+                     <div class="product-price">&dollar;15</div>
+                     <div class="product-title">Banana</div>
+                  </figcaption>
+               </figure>
+            </div>
+            <div class="col-xs-12 col-md-4">
+               <figure class="product">
+                  <div class="product-image">
+                     <img src="https://via.placeholder.com/600?text=Banana" alt="">
+                  </div>
+                  <figcaption class="product-caption">
+                     <div class="product-price">&dollar;15</div>
+                     <div class="product-title">Banana</div>
+                  </figcaption>
+               </figure>
+            </div>
+         </div>
+      </div>
+   </div>
    
 </body>
 </html>

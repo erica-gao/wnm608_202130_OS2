@@ -7,6 +7,10 @@
 	/*12 even columns*/
 }
 
+.grid-parent {
+	display: grid;
+}
+
 
 .grid.decimal {
 	grid-template-columns: repeat(10, 1fr);
@@ -22,7 +26,31 @@
 
 .gap.large {--grid-gap: 2em;}
 
+.grid-gap-small {
+	--grid-gap: 0.5em;
+	grid-gap: var(--grid-gap);
+	gap: var(--grid-gap);}
 
+.grid-gap-large {
+	--grid-gap: 2em;
+	grid-gap: var(--grid-gap);
+	gap: var(--grid-gap);}
+
+
+
+
+
+.grid-wrap-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-wrap-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-wrap-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-wrap-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-wrap-6 { grid-template-columns: repeat(6, 1fr); }
+.grid-wrap-7 { grid-template-columns: repeat(7, 1fr); }
+.grid-wrap-8 { grid-template-columns: repeat(8, 1fr); }
+.grid-wrap-9 { grid-template-columns: repeat(9, 1fr); }
+.grid-wrap-10 { grid-template-columns: repeat(10, 1fr); }
+.grid-wrap-11 { grid-template-columns: repeat(11, 1fr); }
+.grid-wrap-12 { grid-template-columns: repeat(12, 1fr); }
 
 
 
@@ -40,6 +68,20 @@
 .col-10 {grid-column: span 10;}
 .col-11 {grid-column: span 11;}
 .col-12 {grid-column: span 12;}
+
+
+.row-1 {grid-row: span 1;}
+.row-2 {grid-row: span 2;}
+.row-3 {grid-row: span 3;}
+.row-4 {grid-row: span 4;}
+.row-5 {grid-row: span 5;}
+.row-6 {grid-row: span 6;}
+.row-7 {grid-row: span 7;}
+.row-8 {grid-row: span 8;}
+.row-9 {grid-row: span 9;}
+.row-10 {grid-row: span 10;}
+.row-11 {grid-row: span 11;}
+.row-12 {grid-row: span 12;}
 
 
 

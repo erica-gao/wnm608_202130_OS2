@@ -5,7 +5,7 @@
 ### Important Links
 
 - http://erica-gao.com
-- http://erica-gao.com/aau/wnm608/Gao.Erica
+- http://erica-gao.com/aau/wnm608/Gao.Erica/index.php/
 - http://erica-gao.com/aau/wnm608/Gao.Erica/styleguide/
 
 

@@ -18,15 +18,15 @@
   /* neutral should be grey */ 
   /* avoid having color in the naming */
 
-   --color-neutral-lighter:#f3e8f3;
-   --color-neutral-light:#c1b4bf;
-   --color-neutral-medium:#7f757e;
-   --color-neutral-dark:#494348;
+   --color-neutral-lighter:#ededed;
+   --color-neutral-light:#b3b3b3;
+   --color-neutral-medium:#565656;
+   --color-neutral-dark:#333333;
 
 
-   --color-main-light: #c19f91;
-   --color-main-medium: #896456;
-   --color-main-dark: #53382c;
+   --color-main-light: #d8cbcb;
+   --color-main-medium: #b7a3a3;
+   --color-main-dark: #554949;
 
    --color-sub-light: #e9c3a0;
    --color-sub-medium: #c89e78;
@@ -38,25 +38,27 @@
 
    --color-white:#fff;
    --color-black:#111;
+   --color-light-green: #f0f3ed;
 
 
-   --color-confirm: #34a972;
+   --color-confirm: #3f8607;
    --color-cancel: #e6e4e4;
    --color-warning: #dd3444;
    --color-info: #8787dc;
+   --color-filter: #f5f5f5;
 
    --color-button: #544949;
    --color-button-light: #aca9b5;
 
 
    --header-height: 3rem;
-   --category-height: 3rem;
+   --category-height: 2rem;
    --border-size: 0.3rem;
    /*padding, border etc, doesn't change when font-size changes*/
 
 
-   --font-sans: Helvetica, Arial, sans-serif;
-   --font-serif: Roboto, Georgia, "Times New Roman", serif;
+   --font-sans: Lato, Roboto, Miso;
+   --font-serif: Mukta, Georgia, serif;
 }
 
 body {
@@ -72,7 +74,7 @@ h4,
 h5,
 h6,
 p {
-   font-family:var(--font-serif);
+   font-family:var(--font-sans);
 }
 
 h1 {
@@ -81,13 +83,18 @@ h1 {
 }
 h2 {
    font-size:1.25em;
+   color: var(--color-main-dark);
+}
+h3 {
+   font-size:1.15em;
    color: var(--color-main-medium);
 }
-h3,
+
+
 h4 {
    font-size:1em;
    margin:1em 0;
-   color: var(--color-main-medium);
+   color: var(--color-sub-dark);
 }
 h5,
 h6 {
@@ -122,7 +129,7 @@ a:hover {
 
 .display-flex { display:flex; }
 .display-grid {display: grid;}
-.display-flex-space {display: flex; justify-content: space-around;}
+.display-flex-space {display: flex; justify-content: space-between;}
 .display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
@@ -377,6 +384,11 @@ a:hover {
    color: var(--color-white);
 }
 
+.card.light-green {
+   background-color: var(--color-light-green);
+   color: var(--color-black);
+}
+
 .card.medium{
    background-color: var(--color-neutral-medium);
 }
@@ -388,6 +400,7 @@ a:hover {
 .card.flat{
    padding: 0;
 }
+
 
 .card>:first-child { margin-top:0; }
 >:last-child { margin-bottom:0; }
@@ -622,11 +635,11 @@ hr {
 .btn.btn-lg {
 
    display:inline-block;
+   margin-right: 0.5em;
    border-width:0;
    padding:0.7em 1em;
    border-radius:0.3em;
    font:inherit;
-   outline:0;
    text-align:center;
    text-decoration:none;
    cursor:pointer;
@@ -638,12 +651,15 @@ hr {
 .btn.btn-sm {
 
    display:inline-block;
+   margin: auto 0;
+   height: 2em;
+   width: 4em;
+   margin-right: 0.5em;
    size: 2em;
    border-width:0;
    padding:0.3em 0.5em;
    border-radius:0.2em;
    font:inherit;
-   outline:0;
    text-align:center;
    text-decoration:none;
    cursor:pointer;
@@ -682,6 +698,11 @@ hr {
 
 .btn-info {
    background-color: var(--color-info);
+}
+
+.btn-filter {
+   background-color: var(--color-filter);
+   outline: 2px solid var(--color-main-dark);
 }
 
 .btn-light {

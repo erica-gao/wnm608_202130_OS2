@@ -470,6 +470,7 @@ hr {
 }
 
 .form-input {
+   margin-bottom: 1em;
    display: inline-block;
    /*resize the layout around it rather than change its size*/
    width: 100%;
@@ -520,8 +521,9 @@ hr {
    margin: 0.5em 0;
 }
 .form-button {
+   margin-top: 1em;
    display:inline-block;
-   width:100%;
+   width:20%;
    border-width:0;
    background-color:var(--color-neutral-light);
    padding:0.5em 1em;

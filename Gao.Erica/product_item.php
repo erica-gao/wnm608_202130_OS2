@@ -45,7 +45,7 @@
                <option value="100">100 Capsules OL</option>
             </select>
         </div>
-        <a href="cart.php" class="btn btn-cart btn-lg" style="margin-top: 2em;">Add to Cart</a>
+        <div><a href="product_added_to_cart.php">Add To Cart</a></div>
       </div>
       </div>
 

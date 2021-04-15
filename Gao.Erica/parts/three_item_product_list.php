@@ -8,7 +8,7 @@
 
          <div class="product_name"><h4>Product Name</h4></div>
          <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
-         <p class="button big" style="text-align: center;">Add to Cart</p>
+         <p style="text-align: center;"><a class="btn btn-cart btn-lg" href="product_added_to_cart.php">Add to Cart</a></p>
       </div>
 
       <div class="col-xs-12 col-md-4">
@@ -18,7 +18,7 @@
 
          <div class="product_name"><h4>Product Name</h4></div>
          <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
-         <p class="button big" style="text-align: center;">Add to Cart</p>
+         <p style="text-align: center;"><a class="btn btn-cart btn-lg" href="product_added_to_cart.php">Add to Cart</a></p>
       </div>
 
       <div class="col-xs-12 col-md-4">
@@ -28,7 +28,7 @@
 
          <div class="product_name"><h4>Product Name</h4></div>
          <div class="product_name"><p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium similique molestias tenetur perferendis alias.</p></div>
-         <p class="button big" style="text-align: center;">Add to Cart</p>
+         <p style="text-align: center;"><a class="btn btn-cart btn-lg" href="product_added_to_cart.php">Add to Cart</a></p>
       </div>
    </div>
 

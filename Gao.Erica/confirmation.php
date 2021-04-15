@@ -14,7 +14,10 @@
 
    	<div class="card soft" style="text-align: center;">
    		<h2>ORDER CONFIRMATION</h2>
-   		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, neque, id, voluptatem deleniti maxime quia excepturi dicta explicabo ipsam nostrum obcaecati molestiae quisquam eligendi ad in culpa consequuntur reprehenderit aut.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, neque, id, voluptatem deleniti maxime quia excepturi dicta explicabo ipsam nostrum obcaecati molestiae quisquam eligendi ad in culpa consequuntur reprehenderit aut.</p>
+   		<p>A confirmation email will be sent to your address!</p>
+         <h4>Here is what you bought</h4>
+
+         <div><a href="coffeeproducts.php">Try out these things</a></div>
    		
    	</div>
    </div>

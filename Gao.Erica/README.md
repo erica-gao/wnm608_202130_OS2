@@ -5,9 +5,9 @@
 ### Important Links
 
 - http://erica-gao.com
-- http://erica-gao.com/aau/wnm608/Gao.Erica/index.php/
-- http://erica-gao.com/aau/wnm608/Gao.Erica/styleguide/
+- http://erica-gao.com/aau/wnm608/gao.erica/index.php/
+- http://erica-gao.com/aau/wnm608/gao.erica/styleguide/
 
 
 ### Recipes Link
-- http://erica-gao.com/aau/wnm608/Gao.Erica/recipes/
+- http://erica-gao.com/aau/wnm608/gao.erica/recipes/

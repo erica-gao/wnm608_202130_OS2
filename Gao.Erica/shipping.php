@@ -9,10 +9,14 @@
 <body>
    <?php include "parts/navbar.php" ?>
 
+
+
    <div class="container" style="margin-top: 2em; margin-bottom: 4em;">
+
+    <a href="#" onclick="history.back();return false;">Back</a>
    	<h2>Shipping Information</h2>
    	<div class="grid gap" style="margin-bottom: 1em;">
-       <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-6">
        	<label for="inputAddress" class="form-label">First Name</label>
          <input type="text" class="form-input" placeholder="First name">
        </div>
@@ -21,6 +25,8 @@
          <input type="text" class="form-input" placeholder="Last name">
        </div>
      </div>
+
+   
 
      <div class="grid gap">
        <div class="col-xs-12 col-md-12">

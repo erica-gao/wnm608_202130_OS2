@@ -42,6 +42,10 @@ body {
 
 
 
+[class*='col-']>.card{
+   height: 100%;
+}
+
 
 
 @media (max-width:500px) {
@@ -237,12 +241,6 @@ body {
 .footer h5,
 .footer h6 {
     font-weight: 400;
-}
-
-
-
-form {
-   margin-top: 3em;
 }
 
 

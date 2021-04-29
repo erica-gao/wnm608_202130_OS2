@@ -10,6 +10,9 @@
    <link rel="stylesheet" href="lib/css/styleguide.css">
    <link rel="stylesheet" href="lib/css/gridsystem.css">
    <link rel="stylesheet" href="css/storetheme.css">
+
+   <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="lib/js/main.js"></script>
 </head>
 <body>
 
@@ -333,6 +336,15 @@
 
          	<h3>Soft flat Card</h3>
          	<div class="card soft flat">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+          <h3>Soft flat Card Section</h3>
+          <div class="card soft flat">
+
+            <div class="card-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+            <div class="card-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus error labore porro. Rem, ipsa fuga soluta nesciunt recusandae iusto minus.</div>
+
+          </div>
 
 
       	</div>
@@ -784,7 +796,7 @@
 
          <!-- numbers' dropdown - not good for redesign, but you can redesign the button -->
 
-         <select name="" id="">
+         <select name="" id="" style="margin-bottom: 2em;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -792,7 +804,7 @@
             
          </select>
 
-         <div class="form-select">
+         <div class="form-select" style="margin-bottom: 2em;">
             <select>
                <option value="bird">bird</option>
                <option value="dog">dog</option>
@@ -800,6 +812,10 @@
                <option value="horse">horse</option>
             </select>
          </div>
+
+         <div class="quantity buttons_added">
+            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+          </div>
 
       </div>
    </div>

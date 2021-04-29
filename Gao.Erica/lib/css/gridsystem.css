@@ -102,7 +102,7 @@
 
 	.gap.xs-large { --grid-gap: 2em; }*/
 
-	.col-margin {margin-bottom: 2.2em;}
+	.col-margin {margin-bottom: 3em;}
 
 
 	.col-xs-1 {grid-column: span 1;}

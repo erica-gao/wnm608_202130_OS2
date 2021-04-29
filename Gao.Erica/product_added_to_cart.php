@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php 
+
+include "lib/php/functions.php";
+include "parts/templates.php";
+
+$cart = MYSQLIQuery("
+   SELECT *
+   FROM `products`
+   WHERE `id` IN (5, 9, 13)
+");
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
    <title>Added To Cart</title>
@@ -11,23 +23,29 @@
 
    <div class="container">
       <div class="card soft">
-         <h2>The following items has been added to your cart</h2>
-         <?php include "parts/three_item_product_list.php" ?>
+         <h2>Your Cart</h2>
+         <?php
 
-         <div class="grid gap">
-	      <div class="col-xs-12 col-md-6">
-	         <a href="shipping.php" class="btn btn-checkout btn-lg">Checkout</a>
+         echo array_reduce($cart,'makeCartList');
 
-	      </div>
+         ?>
+	      
 	    </div>
 
 
+         <div class="display-flex">
+            <div class="flex-none">
+               <a class="form-button" href="javascript:window.history.back();">Continue Shopping</a>
+            </div>
+
+            <div class="flex-stretch">
+            </div>
+
+            <div class="flex-none">
+               <a class="form-button" href="shipping.php">Checkout</a>
+            </div>
 
 
-
-
-
-         <div><a href="coffeeproducts.php">Back To Shopping</a></div>
       </div>
    </div>
 </body>

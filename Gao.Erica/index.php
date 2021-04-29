@@ -1,7 +1,15 @@
-<!DOCTYPE html>
+<?php 
+
+include "lib/php/functions.php";
+include "parts/templates.php";
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
    <title>Baristas</title>
+
+   
 
    <?php include "parts/meta.php" ?>
 
@@ -18,8 +26,26 @@
 			<div class="display-flex flex-justify-center">
 				<h2>Find the right brewer for you</h2>
 			</div>
+         
+         <div class="grid gap product-list">
 
-			<?php include "parts/four_item_product_list.php" ?>
+         <?php
+
+         $products = MYSQLIQuery("
+            SELECT * 
+            FROM 
+            `products`
+            WHERE `category` = 'coffee machine'
+            ORDER BY `date_create`
+            LIMIT 5
+
+            ");
+
+         echo array_reduce($products, 'makeProductList');
+         ?>
+      </div>
+
+         
 
 
 		</div>

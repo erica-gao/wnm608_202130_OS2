@@ -11,47 +11,40 @@ function file_get_json($filename) {
 }
 
 
-function create_user_data($user) {
 
-	$classes_data = explode(" ", $inputClasses);
 
-	$arr = array('name' => $_POST['inputfirstname'] . $_POST['inputlastname'], 'firstname' => $_POST['inputfirstname'], 'lastname' => $_POST['inputlastname'], 'type' => $_POST['inputType'], 'email' => $_POST['inputEmail'], 'classes' => $classes_data);
 
-	file_put_contents($users, json_encode($arr));
+/* DATABASE CONNECTION */
+function MYSQLIConn() {
+   include_once "data/auth.php";
 
+   @$conn = new mysqli(...MYSQLIAuth());
+
+   if($conn->connect_errno)
+      die($conn->connect_error);
+
+   $conn->set_charset('utf8');
+
+   return $conn;
 }
 
 
+/* DATABASE CALL */
+function MYSQLIQuery($sql) {
+   $conn = MYSQLIConn();
 
-function update_database($user) {
+   // $conn is whatever value that is returned by MYSQLIConn() function because the value is not accessible outside of the function
 
+   $a =[];
 
-   // data items to delete
-   unset($user->lastname);
-   unset($user->firstname);
-   unset($user->name);
-   // unset($arr['server']['SERVER-01'][0]['id']);
+   $result = $conn->query($sql);
 
-   // the new (dummy) data that needs to be set in lieu of deleted data
-   $lastname = $_POST['inputlastname'];
-   $firstname = $_POST['inputfirstname'];
-   // $id = 9;
+   if($conn->errno)
+      die($conn->error);
 
-   $user->lastname = $lastname;
-   $user->firstname = $firstname;
-   $user->name = $firstname . ' ' . $lastname;
-   // $arr['server']['SERVER-01'][0]['id'] = $id;
+   while($row = $result->fetch_object()) {
+      $a[] = $row;
+   }
 
-   // array with inserted values
-   pretty_dump($user);
-   update_user_data($user);
-
-
-
-}
-
-
-function update_user_data($user) {
-	
-
+   return $a;
 }

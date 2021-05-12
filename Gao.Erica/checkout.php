@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+
+include "lib/php/functions.php";
+include "parts/templates.php";
+
+$cart = getCartItems();
+
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
    <title>Checkout</title>
@@ -113,8 +123,17 @@
      </div>
 
 
-     <div class="col-xs-12 col-md-12" style="margin: 4em auto;">
-         <a href="confirmation.php" class="btn btn-checkout btn-lg">Proceed to Secure Payment</a>
+     <div class="col-xs-12 col-md-8" style="margin: 4em auto;">
+      <?
+        echo array_reduce($cart,'makeCondensedCartList');
+        echo cartTotals();
+
+        ?>
+
+      </div>
+
+      <div class="col-xs-12 col-md-4" style="margin: 4em auto;">
+         <a href="product_actions.php?crud=reset-cart" class="btn btn-checkout btn-lg">Proceed to Secure Payment</a>
 
       </div>
    </div>

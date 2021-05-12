@@ -8,8 +8,12 @@
          <nav class="flex-none nav flex">
             <ul>
                <li><a href="index.php">Home</a></li>
-               <li><a href="signin.php">Sign In</a></li>
-               <li><a href="cart.php">Cart</a></li>
+               <li><a href="coffeeproducts.php">Shop</a></li>
+               <li><a href="index.php#aboutus">About Us</a></li>
+               <li><a href="cart.php">
+               <span>Cart</span>
+               <span class="badge"><?= makeCartBadge() ?></span>
+            </a></li>
             </ul>
             
          </nav>

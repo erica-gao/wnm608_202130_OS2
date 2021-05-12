@@ -3,12 +3,13 @@
 include "lib/php/functions.php";
 include "parts/templates.php";
 
-$cart = MYSQLIQuery("
-   SELECT *
-   FROM `products`
-   WHERE `id` IN (5,9,13)
-");
 
+//resetCart();
+//pretty_dump(getCart());
+
+$cart=getCartItems();
+
+// pretty_dump(count($cart));
 
 
 ?><!DOCTYPE html>
@@ -20,22 +21,41 @@ $cart = MYSQLIQuery("
 </head>
 <body>
    <?php include "parts/navbar.php" ?>
-   
+   <?php include "parts/categorybar.php" ?>
+
 
    <div class="container">
-      <div class="card soft">
-         <h2>Confirm Cart</h2>
+      <div class="grid gap">
+         <div class="col-xs-12 col-md-8">
+            <div class="card soft flat">
+               <div class="card-section">
 
-         <?php
+                  <?php
 
-         echo array_reduce($cart,'makeCartList');
+                  if(!count($cart)) {
+                     echo "<div class='card-section'>No Items In Cart Yet.</div>";
+                  }
+                  else {
+                     echo array_reduce($cart,'makeCartList');
+                  }
 
-         ?>
-
-         <div>
-            <a class="form-button" href="shipping.php">Checkout</a>
+                  ?>
+               </div>
+            </div>
+         </div>
+         <div class="col-xs-12 col-md-4">
+            <div class="card soft flat">
+               <div class="card-section">
+                  <h2>Confirm Cart</h2>
+               </div>
+               <?= cartTotals() ?>
+               <div class="card-section">
+                  <a class="form-button" href="checkout.php">Checkout</a>
+               </div>
+            </div>
          </div>
       </div>
    </div>
+   
 </body>
 </html>

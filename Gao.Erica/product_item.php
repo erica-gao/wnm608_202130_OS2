@@ -5,18 +5,16 @@
 
 include "lib/php/functions.php";
 include "parts/templates.php";
+include "data/api.php";
 
-$product = MYSQLIQuery("
-   SELECT *
-   FROM `products`
-   WHERE `id` = {$_GET['id']}
-")[0];
+$product = makeStatement("product_by_id")[0];
 
 $thumbs = explode(",", $product->image_thumb);
 
 $thumb_elements = array_reduce($thumbs,function($r,$o){
    return $r."<img src='images/store/$o'>";
 });
+
 
 ?>
 
@@ -47,26 +45,56 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 
      <div class="grid gap">
       <div class="col-xs-12 col-md-7 col-margin">
+         <div class="image-main">
+            <img src="images/store/<?= $product->image_thumb ?>" />
+         </div>
 
-        <div class="card soft">
-               <div class="image-main">
-                  <img src="images/store/<?= $product->image_thumb ?>" />
-               </div>
-
-               <div class="image-thumbs"><?= $thumb_elements ?></div>
-            </div>
+         <div class="image-thumbs"><?= $thumb_elements ?></div>
          
       </div>
 
 
       <div class="col-xs-12 col-md-4 col-margin">
+        <form class="card soft flat" action="product_actions.php?crud=add-to-cart" method="post" style="margin-top: 0;">
+          <input type="hidden" name="id" value="<?= $product->id ?>">
+          <div class="card-section">
         <div class="product-title"><?= $product->name ?></div>
         <div class="product-price">&dollar;<?= $product->price ?></div>
+
+      </div>
+
+
+      <?php
+
+      $category = $product->category;
+
+      if($category == 'coffee capsule') {
+
+      ?>
        
         <div class="card-section">
-            <label class="form-label">Cup Size</label>
+
+  
+
+            <p><span style="font-weight: 700;">Cup Size: </span><?= $product->cup_size ?></p> 
+
+            <p><span style="font-weight: 700;">Intensity: </span><?= $product->intensity ?></p> 
+
+            <p><span style="font-weight: 700;">Aromatic Profile: </span><?= $product->aromatic ?></p> 
+
+            <p><span style="font-weight: 700;">Origin: </span><?= $product->origin ?></p> 
+            
+        </div>
+
+        <?php
+      }
+
+      ?>
+
+          <div class="card-section">
+            <label class="form-label">Amount</label>
             <div class="form-select">
-               <select>
+               <select name="amount">
                   <!-- option[value='$']*10>{$} -->
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -81,20 +109,108 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
                </select>
             </div>
           </div>
+
+
           <div class="card-section">
-            <a href="product_added_to_cart.php" class="form-button sell">Add To Cart</a>
+            <button type="submit" class="form-button sell">Add To Cart</button>
           </div>
       </div>
       </div>
+    </form>
 
       <div style="margin-top: 2em; margin-bottom: 4em;">
-        <h3>Details</h3>
-        <p><?= $product->description ?></p>
+
+
+        <div class="card-section">
+          <h1>Enjoy more with less</h1>
+          <p><?= $product->description ?></p>
+
+        </div>
+
+        <?php
+
+        $category = $product->category;
+
+        if($category == 'coffee machine') {
+
+
+
+        ?>
+
+        <div class="card-section">
+
+          <h4 style="color: var(--color-neutral-light);">Product Details</h4>
+
+          <div class="card-section grid gap">
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>WEIGHT</h2>
+            <p><?= $product->Weight ?></p>
+
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>WARRANTY</h2>
+            <p><?= $product->Warranty ?></p>
+
+            </div>
+            
+          </div>
+
+          <div class="card-section grid gap">
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>DIMENSION</h2>
+            <p><?= $product->Dimension ?></p>
+
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>REMOVABLE WATER TANK</h2>
+            <p><?= $product->water_tank ?></p>
+
+            </div>
+            
+          </div>
+
+          <div class="card-section grid gap">
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>PRESSURE</h2>
+            <p><?= $product->pressure ?></p>
+
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+
+            <h2>CAPACITY</h2>
+            <p><?= $product->capacity ?></p>
+
+            </div>
+            
+          </div>
+
+      </div>
+
+      <?php
+
+    }
+
+
+      ?>
+
 
       </div>
 
 
-      <h3>Similar Products</h3>
+
+
+      <h3>You May Also Like</h3>
 
       <div class="card grid gap">
 

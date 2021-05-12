@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="col-xs-12 col-md-6">
-				<h5>&copy; 2021 Baristas all Rights Reserved</h5>
+				<h5>Design by Erica Gao &copy; 2021 </h5>
 			</div>
 		</div>
 	</div>

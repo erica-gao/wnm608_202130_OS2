@@ -9,7 +9,5 @@
 <link rel="stylesheet" type="text/css" href="lib/css/gridsystem.css">
 <link rel="stylesheet" href="css/storetheme.css">
 
-<script src="lib/js/main.js"></script>
-
-
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/product.js"></script>

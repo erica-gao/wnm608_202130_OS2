@@ -2,6 +2,52 @@
 
 include "lib/php/functions.php";
 include "parts/templates.php";
+include "data/api.php";
+
+
+
+$_SESSION['num'] = isset($_SESSION['num'])?
+$_SESSION['num'] + 1 :
+0;
+
+
+
+setDefault('s',''); // search
+setDefault('t','products_all'); // type
+setDefault('d','DESC'); // order direction
+setDefault('o','date_create'); // order by
+setDefault('l','20'); // limit
+
+// pretty_dump($_GET);
+
+
+function makeSortOptions() {
+   $options = [
+      ["date_create","DESC","Sort By: Latest Products"],
+      ["date_create","ASC","Sort By: Oldest Products"],
+      ["price","DESC","Sort By: Highest Price"],
+      ["price","ASC","Sort By: Lowest Price"]
+   ];
+   foreach($options as [$orderby,$direction,$name]) {
+      echo "
+      <option data-orderby='$orderby' data-direction='$direction'
+      ".($_GET['o']==$orderby && $_GET['d']==$direction ? "selected" : "").">
+      $name</option>
+      ";
+   }
+}
+
+
+if(isset($_GET['t'])) {
+   $result = makeStatement($_GET['t']);
+   $products = isset($result['error']) ? [] : $result;
+} else {
+   $result = makeStatement("products_all");
+   $products = isset($result['error']) ? [] : $result;
+}
+
+
+
 
 
 ?><!DOCTYPE html>
@@ -16,104 +62,92 @@ include "parts/templates.php";
    <?php include "parts/navbar.php" ?>
    <?php include "parts/categorybar.php" ?>
 
-   <div class="container display-flex-space" style="margin-top: 2em;">
-      <h2>Products List</h2>
-      <button type="button" class="btn btn-filter btn-sm">Filter</button>
-
-   </div>
-
-   <div class="container" style="margin-bottom: 2em;">
-      <h3>Capsule Assortment</h3>
 
 
-      <div class="grid gap product-list">
+   <div class="container card transparent" style="margin-bottom: 0; margin-top: 2em;">
+      <div class="grid gap">
+         <div class="col-xs-12 col-md-4">
+            <?php
 
-         <?php
+               if(isset($_GET['category'])) {
+                  showName($_GET['category']);
+                  } else {
+                  echo "<h2>Product List</h2>";
 
-         $products = MYSQLIQuery("
-            SELECT * 
-            FROM 
-            `products`
-            WHERE `category` = 'coffee capsule'
-            ORDER BY `date_create`
-            LIMIT 5
+               }
 
-            ");
+            function showName ($category) {
+               switch($category) {
+                  case "condiments":
+                  echo "<h2>Condiments</h2>";
+                  break;
 
-         echo array_reduce($products, 'makeProductList');
-         ?>
+                  case "accessories":
+                  echo "<h2>Accessories</h2>";
+                  break;
+
+                  case "capsule":
+                  echo "<h2>Capsule Assortments</h2>";
+                  break;
+
+                  case "machine":
+                  echo "<h2>Coffee Machine</h2>";
+                  break;
+
+                  default: echo "<h2>Product List</h2";
+
+
+               }
+
+            }
+
+?>
+         </div>
+
+         <div class="col-xs-12 col-md-4">
+               <form action="coffeeproducts.php" method="get" class="hotdog right">
+               <div class="flex-stretch">
+                  <input type="hidden" name="t" value="search">
+                  <input type="hidden" name="d" value="<?=$_GET['d']?>">
+                  <input type="hidden" name="o" value="<?=$_GET['o']?>">
+                  <input type="hidden" name="l" value="<?=$_GET['l']?>">
+                  <input type="search" name="s" placeholder="Search" value="<?= $_GET['s'] ?>">
+               </div>
+               <div class="flex-none">
+                  <img src="images/icon/search.svg" alt="" class="icon">
+                  </div>
+            </form>
+                     
+         </div>
+
+         <div class="col-xs-12 col-md-4">
+            <form action="coffeeproducts.php" method="get" class="sort_form">
+               <input type="hidden" name="t" value="search">
+               <input type="hidden" name="s" value="<?=$_GET['s']?>">
+               <input type="hidden" name="d" value="<?=$_GET['d']?>">
+               <input type="hidden" name="o" value="<?=$_GET['o']?>">
+               <input type="hidden" name="l" value="<?=$_GET['l']?>">
+               <div class="form-select">
+                  <select onChange="checkSort(this)">
+                     <? makeSortOptions() ?>
+                  </select>
+               </div>
+            </form>
+                        
+         </div>
       </div>
-      
-   </div>
+</div>
 
    <div class="container" style="margin-bottom: 2em;">
-      <h3>Coffee Machines</h3>
-
-
       <div class="grid gap product-list">
 
          <?php
 
-         $products = MYSQLIQuery("
-            SELECT * 
-            FROM 
-            `products`
-            WHERE `category` = 'coffee machine'
-            ORDER BY `date_create`
-            LIMIT 5
-
-            ");
-
-         echo array_reduce($products, 'makeProductList');
-         ?>
-      </div>
-      
-   </div>
-
-   <div class="container" style="margin-bottom: 2em;">
-      <h3>Accessories</h3>
-
-
-      <div class="grid gap product-list">
-
-         <?php
-
-         $products = MYSQLIQuery("
-            SELECT * 
-            FROM 
-            `products`
-            WHERE `category` = 'coffee cups pack of 2' OR `category` = 'milk frother' OR `category` = 'mug' OR `category` = 'coffee maintenance'
-            ORDER BY `date_create`
-            LIMIT 6
-
-            ");
-
-         echo array_reduce($products, 'makeProductList');
-         ?>
-      </div>
-      
-   </div>
-
-
-   <div class="container" style="margin-bottom: 2em;">
-      <h3>Condiments</h3>
-
-
-      <div class="grid gap product-list">
-
-         <?php
-
-         $products = MYSQLIQuery("
-            SELECT * 
-            FROM 
-            `products`
-            WHERE `category` = 'condiments'
-            ORDER BY `date_create`
-            LIMIT 6
-
-            ");
-
-         echo array_reduce($products, 'makeProductList');
+         if(empty($products)) {
+            echo "No products found.";
+         } else {
+            echo array_reduce($products,'makeProductList');
+         }
          ?>
       </div>
       
@@ -122,8 +156,6 @@ include "parts/templates.php";
 
 
 
-
-   
 </body>
 
 <?php include "parts/footer.php" ?>

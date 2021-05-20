@@ -153,6 +153,10 @@ if(isset($_GET['t'])) {
       
    </div>
 
+   <div class="container">
+      <div class="card soft"><a href="admin">Product Admin</a></div>
+   </div>
+
 
 
 

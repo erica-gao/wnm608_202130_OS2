@@ -7,6 +7,13 @@ include "lib/php/functions.php";
 include "parts/templates.php";
 include "data/api.php";
 
+setDefault('s',''); // search
+setDefault('t','products_all'); // type
+setDefault('d','DESC'); // order direction
+setDefault('o','date_create'); // order by
+setDefault('l','20'); // limit
+
+
 $product = makeStatement("product_by_id")[0];
 
 $thumbs = explode(",", $product->image_thumb);
@@ -21,7 +28,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Capsule</title>
+   <title>Baristas</title>
 
    <?php include "parts/meta.php" ?>
 </head>
@@ -36,7 +43,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
    	</div>
    	
     <a href="coffeeproducts.php">
-    	<h3>Back to all coffee</h3>
+    	<a href="#" onclick="history.back();return false;"><h3>Back</h3></a>
  	  </a>
 
    </div>
@@ -68,7 +75,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 
       $category = $product->category;
 
-      if($category == 'coffee capsule') {
+      if($category == 'capsule') {
 
       ?>
        
@@ -76,20 +83,34 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 
   
 
-            <p><span style="font-weight: 700;">Cup Size: </span><?= $product->cup_size ?></p> 
+            <p style="font-size: 0.9em;"><span style="font-weight: 700; color: var(--color-sub-dark);">Cup Size: </span><?= $product->cup_size ?></p> 
 
-            <p><span style="font-weight: 700;">Intensity: </span><?= $product->intensity ?></p> 
+            <p style="font-size: 0.9em;"><span style="font-weight: 700; color: var(--color-sub-dark);">Intensity: </span><?= $product->intensity ?></p> 
 
-            <p><span style="font-weight: 700;">Aromatic Profile: </span><?= $product->aromatic ?></p> 
+            <p style="font-size: 0.9em;"><span style="font-weight: 700; color: var(--color-sub-dark);">Aromatic Profile: </span><?= $product->aromatic ?></p> 
 
-            <p><span style="font-weight: 700;">Origin: </span><?= $product->origin ?></p> 
+            <p style="font-size: 0.9em;"><span style="font-weight: 700; color: var(--color-sub-dark);">Origin: </span><?= $product->origin ?></p> 
             
         </div>
 
         <?php
       }
 
+      if(($category == 'machine') or ($category == 'condiments')){
+
       ?>
+
+      <div class="card-section">
+
+        <strong style="color: var(--color-sub-dark);">Description</strong>
+
+        <p><?= $product->description ?></p>
+      </div>
+
+      <?php
+    }
+
+    ?>
 
           <div class="card-section">
             <label class="form-label">Amount</label>
@@ -120,27 +141,20 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 
       <div style="margin-top: 2em; margin-bottom: 4em;">
 
-
-        <div class="card-section">
-          <h1>Enjoy more with less</h1>
-          <p><?= $product->description ?></p>
-
-        </div>
-
         <?php
 
         $category = $product->category;
 
-        if($category == 'coffee machine') {
-
-
+        if($category == 'machine') {
 
         ?>
 
         <div class="card-section">
+          <h1 style="font-weight: 400; color: var(--color-sub-dark); text-transform: uppercase;"><?= $product->intro ?></h1>
 
-          <h4 style="color: var(--color-neutral-light);">Product Details</h4>
+        </div>
 
+  
           <div class="card-section grid gap">
 
             <div class="col-xs-12 col-md-6">
@@ -195,17 +209,69 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
             
           </div>
 
-      </div>
-
-      <?php
+          <?php
 
     }
 
 
+        if($category == 'capsule') {
+
+        ?>
+
+
+        <div class="card-section">
+          <h1><?= $product->intro ?></h1>
+          <p style="line-height: 1.5em; margin-bottom: 2em;"><?= $product->description ?></p>
+
+        </div>
+
+        <div class="card-section">
+          <h4>ORIGIN STORY</h4>
+          <p style="line-height: 1.5em; color: var(--color-neutral-medium);"><?= $product->origin_description ?></p>
+
+        </div>
+
+        <div class="card-section">
+          <h4>MORE ABOUT ROASTING</h4>
+          <p style="line-height: 1.5em; color: var(--color-neutral-medium);"><?= $product->roasting_info ?></p>
+
+        </div>
+
+        <div class="card-section">
+          <h4>AROMATIC PROFILE</h4>
+          <p style="line-height: 1.5em; color: var(--color-neutral-medium);"><?= $product->aromatic_profile ?></p>
+
+        </div>
+
+
+
+
+<?php
+
+    }
+
+    if ($category == 'accessories') {
       ?>
 
+      <div class="card-section">
+          <h1><?= $product->intro ?></h1>
+          <p style="line-height: 1.5em; margin-bottom: 2em;"><?= $product->description ?></p>
+
+        </div>
+
+        <?php
+
+
+    }
+
+      ?>
 
       </div>
+
+      
+
+
+      <div class="container">
 
 
 
@@ -249,6 +315,8 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
   
  
     </div>
+
+  </div>
     
 
 

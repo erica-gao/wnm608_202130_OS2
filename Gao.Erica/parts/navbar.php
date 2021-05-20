@@ -1,13 +1,17 @@
 <header class="navbar">
       <div class="container display-flex flex-align-center">
+
+         <div class="flex-none image-logo">
+            <img src="images/Baristas_logo.png">
+         </div>
          <div class="flex-none">
-            <h1 style="color: var(--color-white);">Baristas</h1>
+            <a style="text-decoration: none;" href="index.php"><h1 style="color: var(--color-white); font-size: 1.5em; font-style: italic; ">Baristas</h1></a>
+
          </div>
          <div class="flex-stretch">
          </div>
          <nav class="flex-none nav flex">
             <ul>
-               <li><a href="index.php">Home</a></li>
                <li><a href="coffeeproducts.php">Shop</a></li>
                <li><a href="index.php#aboutus">About Us</a></li>
                <li><a href="cart.php">

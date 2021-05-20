@@ -22,7 +22,9 @@ switch($_GET['crud']) {
       setCart($cart);
       header("location:cart.php");
       break;
+
    case "reset-cart":
+      $cartItems = getCart();
       resetCart();
       header("location:confirmation.php");
       break;

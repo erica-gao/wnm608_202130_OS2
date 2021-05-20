@@ -3,6 +3,13 @@
 include "lib/php/functions.php";
 include "parts/templates.php";
 
+setDefault('s',''); // search
+setDefault('t','products_all'); // type
+setDefault('d','DESC'); // order direction
+setDefault('o','date_create'); // order by
+setDefault('l','20'); // limit
+
+
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -51,7 +58,7 @@ include "parts/templates.php";
       <h1 style="text-align: center; margin-top: 3em;">Origin Terriors</h1>
       <hr class="origin">
 
-      <p style="text-align: center; margin-top: 3em; width: 40em; margin: 2em auto;">A result of a harmony between soil, climate and location has a profound effect on a coffee’s taste and character. Check out where Baristas grow our coffee and what unique coffe flavors they produce.
+      <p style="text-align: center; margin-top: 3em; width: 40em; margin: 2em auto;">A result of a harmony between soil, climate and location has a profound effect on a coffee’s taste and character. Check out where Baristas grow our coffee and what unique coffee flavors they produce.
 
       </p>
 
@@ -74,7 +81,9 @@ include "parts/templates.php";
             </div>
 
             <h4>Brazil</h4>
-            <p>Colombia, for example, produces fine washed Arabicas that are grown at a very high altitude right on the equator. </p>
+            <p>Plantations are mainly located in Minas Gerais, where the environment provides ideal growing conditions.</p>
+            <h5 style="font-style: italic; color: var(--color-main-dark);">Result: pleasant bittersweet chocolate and caramel taste</h5>
+
 
 
          </div>
@@ -85,7 +94,8 @@ include "parts/templates.php";
             </div>
 
             <h4>Ethiopia</h4>
-            <p>Colombia, for example, produces fine washed Arabicas that are grown at a very high altitude right on the equator. </p>
+            <p>Foffee beans are grown in either the Harar, Yirgacheffe or Limu regions and are kept apart in the market.</p>
+            <h5 style="font-style: italic; color: var(--color-main-dark);">Result: inimitable and delicate flavor</h5>
 
 
          </div>
@@ -96,25 +106,26 @@ include "parts/templates.php";
             </div>
 
             <h4>Costa Rica</h4>
-            <p>Colombia, for example, produces fine washed Arabicas that are grown at a very high altitude right on the equator. </p>
+            <p>Coffee production began in the Meseta Central which had ideal soil and climate conditions for coffee plantations. </p>
+            <h5 style="font-style: italic; color: var(--color-main-dark);">Result: lively acidity, rich sweetness, and smooth aromatic flavors</h5>
 
 
          </div>
       </div>
 
-
-
-
-
-
-
-
+      
    </div>
+   <div class="view-window display-flex flex-align-center flex-justify-center" style="background-image: url(images/coffee-beans.jpeg);">
+         <div class="container flex-none">
+            <h5 style="font-style: italic; font-size: 1.3em; color: white;">Sustainable Quality</h5>
+            <h1 style="line-height: 1.5em; color: white;">Check out our carefully prepared coffee products.</h1>
 
+            <div style="text-align: center;">
+            <a href="coffeeproducts.php" class="btn btn-checkout btn-lg" style="text-align: center;">Go to Product Lists</a>
+         </div>
+         </div>
+      </div> 
          
-
-
-
 
 
 </body>

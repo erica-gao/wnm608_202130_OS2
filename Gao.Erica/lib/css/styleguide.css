@@ -389,6 +389,13 @@ a:hover {
    box-shadow: 3px 4px 5px 1px #0000002b;
 }
 
+
+.card.radius {
+   border-radius: 1em;
+   box-shadow: 3px 4px 5px 1px #0000002b;
+}
+
+
 .card.hard {
    border-radius: 0.2em;
    border: 2px solid var(--color-neutral-medium);
@@ -404,6 +411,7 @@ a:hover {
 .card.light-green {
    background-color: var(--color-light-green);
    color: var(--color-black);
+
 }
 
 .card.medium{
@@ -411,12 +419,14 @@ a:hover {
 }
 
 .card.rainbow {
-      background-image: linear-gradient(130deg, #ff00a2, blue, #00ff99, #ebff00);
+   background-image: linear-gradient(130deg, #ff00a2, blue, #00ff99, #ebff00);
    }
 
 .card.flat{
    padding: 0;
 }
+
+
 
 .card-section {
       padding:1em;
@@ -651,7 +661,7 @@ hr {
    top:50%;
    right: 0.5em;
    content: '▼';
-   font-family: arial;
+   font-family: Roboto;
    font-size: 0.9em;
    color:var(--color-neutral-dark);
    pointer-events:none;

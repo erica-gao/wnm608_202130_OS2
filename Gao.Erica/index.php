@@ -29,7 +29,7 @@ setDefault('l','20'); // limit
    <?php include "parts/two_cards_flex.php" ?>
 
    <div class="container" style="margin-top: 5em;margin-bottom: 8em;">
-		<div class="card flat">
+		<div class="card flatd">
 				<h2 style="text-align: center;">Our Purpose</h2>
             <h3 style="text-align: center;">Personalized Coffee Experience</h3>
 

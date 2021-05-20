@@ -3,6 +3,13 @@
 include "lib/php/functions.php";
 include "parts/templates.php";
 
+setDefault('s',''); // search
+setDefault('t','products_all'); // type
+setDefault('d','DESC'); // order direction
+setDefault('o','date_create'); // order by
+setDefault('l','20'); // limit
+
+
 // pretty_dump($_POST);
 
 $product = MYSQLIQuery("SELECT * FROM `products` WHERE `id`=".$_GET['id'])[0];
@@ -40,20 +47,47 @@ $cart_product = cartItemById($product->id);
          } else {
          ?>
 
-         <h2 style="margin-top: 3em;">The following items have been added to your cart:</h2>
+         <h2 style="margin-top: 3em; margin-bottom: 2em;">The following items have been added to your cart:</h2>
 
-         <div class="card flat" style="padding-top: 0.2em;">
+         <div class="card soft flat">
+
+            <div class="card-section" style="padding: 0 1em; margin: 0;">
+               <div class="card grid gap" style="padding: 0 1em; margin: 0;">
+                  <div class="col-xs-12 col-md-3">
+                     <h4>Item</h4>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                     <h4>Name</h4>
+                  </div>
+
+                  <div class="col-xs-12 col-md-3">
+                     <h4>Description</h4>
+                  </div>
+
+      
+
+                  <div class="col-xs-12 col-md-3">
+                     <h4>Price</h4>
+                  </div>
 
 
-             <?php
+               </div>
+
+            </div>
+
+            <div class="card-section" style="padding: 0;">
+               <?php
              $product = MYSQLIQuery("SELECT * FROM `products` WHERE `id`=".$_GET['id']);
 
             echo array_reduce($product, 'makeaddedtoCartList');
             ?>
+
+            </div>
+
           </div>
 
           <div class="display-flex">
-            <div class="flex-none" style="margin-left: 2em;">
+            <div class="flex-none">
                <a class="form-button" href="javascript:window.history.back();">Continue Shopping</a>
             </div>
 
@@ -68,7 +102,7 @@ $cart_product = cartItemById($product->id);
    </div>
 
 
-   <div class="container" style="margin-top: 3em;">
+   <div class="container" style="margin-top: 8em;">
       <h3>You May Also Like</h3>
 
       <div class="card-section grid gap">

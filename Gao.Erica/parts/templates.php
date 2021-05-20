@@ -30,7 +30,7 @@ function makeaddedtoCartList($r, $o) {
    // current reducing value; current object that's being reduced 
    return $r.<<<HTML
 
-<div class="card grid">
+<div class="card grid gap" style="padding-top: 0em;">
    <div class="col-xs-12 col-md-3">
 
       <div class="flex-none image-thumbs">
@@ -76,11 +76,13 @@ function makeCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
 $amountselect = selectAmount($o->amount,10);
 return $r.<<<HTML
-<div class="display-flex cart-section">
-   <div class="flex-none image-thumbs">
-      <img src="images/store/$o->image_thumb">
+<div class="card grid gap" style="padding: 0 1em; margin: 0;">
+   <div class="col-xs-12 col-md-4">
+      <div class="flex-none image-thumbs">
+         <img src="images/store/$o->image_thumb">
+      </div>
    </div>
-   <div class="flex-stretch" style="margin-left: 2em; margin-top: 1.3em;">
+   <div class="col-xs-12 col-md-3" style="margin-top: 1.3em;">
       <strong>$o->name</strong>
 
       <form action="product_actions.php?crud=delete-cart-item" method="post" style="font-size:0.8em">
@@ -88,8 +90,9 @@ return $r.<<<HTML
          <input type="submit" value="delete" class="form-button inline">
       </form> 
    </div>
-   <div class="flex-none">
-      <div>&dollar;$totalfixed</div>
+
+   <div class="col-xs-12 col-md-2"></div>
+   <div class="col-xs-12 col-md-1" style="margin-top: 1.3em; text-align: right; width: 3em;">
       <form action="product_actions.php?crud=update-cart-item" method="post" onchange="this.submit()" style="font-size:0.8em">
          <input type="hidden" name="id" value="$o->id">
          <div class="form-select">
@@ -97,7 +100,16 @@ return $r.<<<HTML
          </div>
       </form>
    </div>
+
+   
+
+   <div class="col-xs-12 col-md-2" style="margin-top: 1.3em; text-align: right;">
+      <div>&dollar;$totalfixed</div>
+   </div>
+
+
 </div>
+
 HTML;
 }
 
@@ -105,14 +117,10 @@ function makeCondensedCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
 $amountselect = selectAmount($o->amount,10);
 return $r.<<<HTML
-<div class="display-flex card-section">
-   <div class="flex-stretch">
-      <strong>$o->name</strong>
+   <div class="flex-none image-summary">
+      <img src="images/store/$o->image_thumb">
    </div>
-   <div class="flex-none">
-      <div>&dollar;$totalfixed</div>
-   </div>
-</div>
+
 HTML;
 }
 
@@ -120,6 +128,7 @@ HTML;
 
 function cartTotals() {
 $cart = getCartItems();
+$cartItemNumber = count($cart);
 
 $cartprice = array_reduce($cart,function($r,$o){return $r+$o->total;},0);
 
@@ -128,15 +137,21 @@ $tax = number_format($cartprice*0.0275,2,".","");
 $taxed = number_format($cartprice*1.0275,2,".","");
 
 return <<<HTML
+
+<div class="card-section display-flex" style="border-top: none;">
+   <div class="flex-stretch">
+      <strong> $cartItemNumber Items</strong>
+   </div>
+</div>
 <div class="card-section display-flex">
    <div class="flex-stretch">
-      <strong>Sub Total</strong>
+      Sub Total
    </div>
    <div class="flex-none">&dollar;$pricefixed</div>
 </div>
 <div class="card-section display-flex">
    <div class="flex-stretch">
-      <strong>Taxes</strong>
+      Taxes
    </div>
    <div class="flex-none">&dollar;$tax</div>
 </div>
@@ -144,7 +159,47 @@ return <<<HTML
    <div class="flex-stretch">
       <strong>Total</strong>
    </div>
-   <div class="flex-none">&dollar;$taxed</div>
+   <div class="flex-none"><strong>&dollar;$taxed</strong></div>
+</div>
+HTML;
+}
+
+
+
+function checkoutTotals() {
+$cart = getCartItems();
+$cartItemNumber = count($cart);
+
+$cartprice = array_reduce($cart,function($r,$o){return $r+$o->total;},0);
+
+$pricefixed = number_format($cartprice,2,".","");
+$tax = number_format($cartprice*0.0275,2,".","");
+$taxed = number_format($cartprice*1.0275,2,".","");
+
+return <<<HTML
+
+<div class="card-section display-flex" style="border-top: none;">
+   <div class="flex-stretch">
+      
+   </div>
+</div>
+<div class="card-section display-flex">
+   <div class="flex-stretch">
+      Sub Total
+   </div>
+   <div class="flex-none">&dollar;$pricefixed</div>
+</div>
+<div class="card-section display-flex">
+   <div class="flex-stretch">
+      Taxes
+   </div>
+   <div class="flex-none">&dollar;$tax</div>
+</div>
+<div class="card-section display-flex">
+   <div class="flex-stretch">
+      <strong>Total</strong>
+   </div>
+   <div class="flex-none"><strong>&dollar;$taxed</strong></div>
 </div>
 HTML;
 }

@@ -272,13 +272,14 @@ a.view_all_link {
    border-radius: 0.1em;
 }
 
+
+
 .image-summary {
    margin-right: 1.2em;
 }
 
 .image-summary img {
-   width:6em;
-   height:4em;
+   height: 10em;
    object-fit:cover;
    border-radius: 0.1em;
 }

@@ -15,7 +15,10 @@ setDefault('l','20'); // limit
 <html lang="en">
 <head>
 
+
    <?php include "parts/meta.php" ?>
+   <link rel="icon" href="images/Baristas_logo_BK.png">
+   <title>Baristas Sustainability</title>
 
 </head>
 <body>
@@ -62,7 +65,7 @@ setDefault('l','20'); // limit
 
       </p>
 
-      <div class="card grid gap">
+      <div class="card light-green grid gap">
          <div class="col-xs-12 col-md-3">
             <div class="flex-none image-main">
                <img src="images/farm1.jpeg">
@@ -115,12 +118,13 @@ setDefault('l','20'); // limit
 
       
    </div>
-   <div class="view-window display-flex flex-align-center flex-justify-center" style="background-image: url(images/coffee-beans.jpeg);">
+
+   <div class="view-window display-flex flex-align-center flex-justify-center" style="background-image: url(images/coffee-beans.jpeg); margin-top: 5em;">
          <div class="container flex-none">
             <h5 style="font-style: italic; font-size: 1.3em; color: white;">Sustainable Quality</h5>
-            <h1 style="line-height: 1.5em; color: white;">Check out our carefully prepared coffee products.</h1>
+            <h1 style="line-height: 1.5em; color: white;">Follow our journey to world's premium coffee making</h1>
 
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-top: 2em;">
             <a href="coffeeproducts.php" class="btn btn-checkout btn-lg" style="text-align: center;">Go to Product Lists</a>
          </div>
          </div>
@@ -131,6 +135,46 @@ setDefault('l','20'); // limit
 </body>
 
 
-<?php include "parts/footer.php" ?>
+<footer class="footer" style="margin-top: 0;">
+   <div class="container">
+      <div class="grid gap">
+
+         <div class="col-xs-12 col-md-4">
+            <h5>Home</h5>
+            <h5>Coffee</h5>
+            <h5>Machine</h5>
+            <h5>Accessories</h5>
+         </div>
+
+         <div class="col-xs-12 col-md-4">
+            <h5>About Us</h5>
+            
+         </div>
+
+         <div class="col-xs-12 col-md-4">
+            <h5>Customer Service</h5>
+            <h5>Contact Us</h5>
+            <h5>FAQ</h5>
+            <h5>Career</h5>
+            
+         </div>
+      
+      </div>
+
+      <div class="grid gap">
+         <div class="col-xs-12 col-md-6">
+            <h2>Baristas</h2>
+         </div>
+
+         <div class="col-xs-12 col-md-6">
+            <h5>Design by Erica Gao &copy; 2021 </h5>
+         </div>
+      </div>
+   </div>
+
+   
+   
+
+</footer>
 
 </html>

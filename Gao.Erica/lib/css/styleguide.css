@@ -423,7 +423,7 @@ a:hover {
    }
 
 .card.flat{
-   padding: 0;
+   padding: 1.5em;
 }
 
 
@@ -710,14 +710,10 @@ hr {
 .btn.btn-sm {
 
    display:inline-block;
-   margin: auto 0;
-   height: 2em;
-   width: 4em;
    margin-right: 0.5em;
-   size: 2em;
    border-width:0;
-   padding:0.3em 0.5em;
-   border-radius:0.2em;
+   padding:0.5em 0.8em;
+   border-radius:0.3em;
    font:inherit;
    text-align:center;
    text-decoration:none;

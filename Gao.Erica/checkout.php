@@ -18,6 +18,7 @@ $cart = getCartItems();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="images/Baristas_logo_BK.png">
    <title>Checkout</title>
 
    <?php include "parts/meta.php" ?>
@@ -28,7 +29,7 @@ $cart = getCartItems();
 
 
 
-   <div class="container" style="margin-top: 2em; margin-bottom: 4em;">
+   <div class="container" style="margin-top: 2em; margin-bottom: 8em;">
 
     <div class="grid gap">
          <div class="col-xs-12 col-md-7">
@@ -149,17 +150,17 @@ $cart = getCartItems();
          <div class="col-xs-12 col-md-1"></div>
          <div class="col-xs-12 col-md-4" style="margin-top: 4em;">
 
-          <div class="card light-green soft" style="padding: 0;">
+          <div class="card light-green soft" style="padding: 0.5em;">
 
-           <div class="card-section" style="border-bottom: none;">
+           <div class="card-section" style="border-bottom: none; padding-top: 1em; padding-bottom: 0;">
               <h2>Order Summary</h2>
            </div>
 
-           <div class="display-flex card-section" style="flex-direction: row; border: none;">
+           <div class="card-section" style="border: none; padding-top: 0;">
 
           
           <?
-                echo array_reduce($cart,'makeCondensedCartList');
+                echo array_reduce($cart,'makeCheckoutCartList');
 
           ?>
 
@@ -173,7 +174,7 @@ $cart = getCartItems();
         </div>
 
         <div style="text-align: center;">
-          <a href="product_actions.php?crud=reset-cart" class="btn btn-checkout btn-co" style="margin-top: 2em;">Proceed to Secure Payment</a>
+          <a href="confirmation.php" class="btn btn-checkout btn-co" style="margin-top: 2em;">Proceed to Secure Payment</a>
 
         </div>
 

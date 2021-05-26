@@ -15,7 +15,7 @@
                <li><a href="coffeeproducts.php">Shop</a></li>
                <li><a href="index.php#aboutus">About Us</a></li>
                <li><a href="cart.php">
-               <span>Cart</span>
+               <span><img style="height: 1.3em; margin-top: 1em;" src="images/icon/shopping-cart.png"></span>
                <span class="badge"><?= makeCartBadge() ?></span>
             </a></li>
             </ul>

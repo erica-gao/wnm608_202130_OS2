@@ -51,13 +51,17 @@ function productListItem($r,$product) {
 return $r.<<<HTML
 <div class="card-section">
    <div class="display-flex">
-      <div class="flex-none image-thumbs">
+      <div class="flex-none image-thumbs" style="margin-top: 0; padding-right: 1em;">
          <img src="images/store/$product->image_thumb">
       </div>
-      <div class="flex-stretch">$product->name</div>  
+      <div class="flex-stretch">
+         <div class="flex-none">$product->name</div>
+         <div class="flex-none" style="margin-top: 1em;"><h5>Quantity: $product->quantity</h5></div>
+
+      </div>  
       <div class="flex-none">
-         <a href="{$_SERVER['PHP_SELF']}?id=$product->id" class="form-button">Edit</a>
-         <a href="product_item.php?id=$product->id" class="form-button">Visit</a>
+         <a href="{$_SERVER['PHP_SELF']}?id=$product->id" class="form-button btn-primary" style="color: white;">Edit</a>
+         <a href="product_item.php?id=$product->id" class="form-button btn-success" style="color: white;">Visit</a>
       </div>  
    </div>
 </div>
@@ -74,7 +78,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 });
 $addoredit = $id=="new" ? 'Add' : 'Edit';
 $createorupdate = $id=="new" ? 'create' : 'update';
-$showvisitlink = $id!="new" ? "<div><a href='product_item.php?id=$id' class='form-button'>Visit</a></div>" : "";
+$showvisitlink = $id!="new" ? "<div><a href='product_item.php?id=$id' class='form-button btn-info' style='color: white;''>Visit</a></div>" : "";
 
 echo <<<HTML
 <div class="grid gap">
@@ -90,29 +94,29 @@ echo <<<HTML
 <div class="col-xs-12 col-md-4">
    <div class="card soft">
       <h2>$product->name</h2>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Price</strong>
          <div>&dollar;$product->price</div>
       </div>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Category</strong>
          <div>$product->category</div>
       </div>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Description</strong>
          <div>$product->description</div>
       </div>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Image Thumb</strong>
          <div class="image-thumbs">
             <img src="images/store/$product->image_thumb">
-         </div>
+         </div> 
       </div>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Image Other</strong>
          <div class="image-thumbs">$thumb_elements</div>
       </div>
-      <div>
+      <div style="margin-top: 1.5em;">
          <strong>Quantity</strong>
          <div>$product->quantity</div>
       </div>
@@ -156,7 +160,7 @@ echo <<<HTML
          <input class="form-input" type="number" id="product-quantity" name="product-quantity" value="$product->quantity">
       </div>
       <div class="form-control">
-         <input class="form-button" type="submit" value="Submit">
+         <input class="form-button btn-confirm" type="submit" value="Submit">
       </div>
    </div>
 </form>

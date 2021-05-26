@@ -28,6 +28,7 @@ $thumb_elements = array_reduce($thumbs,function($r,$o){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="images/Baristas_logo_BK.png">
    <title>Baristas</title>
 
    <?php include "parts/meta.php" ?>

@@ -27,6 +27,7 @@ $cart_product = cartItemById($product->id);
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="icon" href="images/Baristas_logo_BK.png">
    <title>Added To Cart</title>
    
    <?php include "parts/meta.php" ?>
@@ -47,7 +48,7 @@ $cart_product = cartItemById($product->id);
          } else {
          ?>
 
-         <h2 style="margin-top: 3em; margin-bottom: 2em;">The following items have been added to your cart:</h2>
+         <h2 style="margin-top: 3em; margin-bottom: 2em;">The following item has been added to your cart:</h2>
 
          <div class="card soft flat">
 

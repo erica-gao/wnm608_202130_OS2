@@ -27,6 +27,7 @@ $cart=getCartItems();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="icon" href="images/Baristas_logo_BK.png">
    <title>Product Cart</title>
    
    <?php include "parts/meta.php" ?>
@@ -36,7 +37,7 @@ $cart=getCartItems();
    <?php include "parts/categorybar.php" ?>
 
 
-   <div class="container">
+   <div class="container" style="margin-top: 2em;">
       <div class="grid gap">
          <div class="col-xs-12 col-md-8">
             <div class="card flat" style="padding-bottom: 3em;">
@@ -142,4 +143,8 @@ $cart=getCartItems();
    </div>
    
 </body>
+
+<?php include "parts/footer.php" ?>
+
+
 </html>

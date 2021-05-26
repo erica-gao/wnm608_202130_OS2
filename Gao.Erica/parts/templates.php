@@ -79,7 +79,7 @@ return $r.<<<HTML
 <div class="card grid gap" style="padding: 0 1em; margin: 0;">
    <div class="col-xs-12 col-md-4">
       <div class="flex-none image-thumbs">
-         <img src="images/store/$o->image_thumb">
+         <img style="padding-right: 1em;" src="images/store/$o->image_thumb">
       </div>
    </div>
    <div class="col-xs-12 col-md-3" style="margin-top: 1.3em;">
@@ -117,7 +117,18 @@ function makeCondensedCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
 $amountselect = selectAmount($o->amount,10);
 return $r.<<<HTML
-   <div class="flex-none image-summary">
+   <div class="image-thumbs" style="margin-right: 1.3em;">
+      <img src="images/store/$o->image_thumb">
+   </div>
+
+HTML;
+}
+
+function makeCheckoutCartList($r,$o) {
+$totalfixed = number_format($o->total,2,'.','');
+$amountselect = selectAmount($o->amount,10);
+return $r.<<<HTML
+   <div class="image-thumbs flex-none">
       <img src="images/store/$o->image_thumb">
    </div>
 

@@ -53,6 +53,7 @@ if(isset($_GET['t'])) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="icon" href="images/Baristas_logo_BK.png">
    <title>Coffee Products</title>
 
    <?php include "parts/meta.php" ?>
@@ -61,6 +62,11 @@ if(isset($_GET['t'])) {
 <body>
    <?php include "parts/navbar.php" ?>
    <?php include "parts/categorybar.php" ?>
+
+   <div class="view-window display-flex flex-align-center flex-justify-center" style="background-image: url(images/hero-image.jpg);">
+         <h1 style="color: var(--color-white);">Carefully brewed <br><span style="font-size: 3em;">Just for you.</span></h1>
+   </div>
+
 
 
 
@@ -152,11 +158,6 @@ if(isset($_GET['t'])) {
       </div>
       
    </div>
-
-   <div class="container">
-      <div class="card soft"><a href="admin">Product Admin</a></div>
-   </div>
-
 
 
 
